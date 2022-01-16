@@ -1,0 +1,15 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: 'AndreLimZS'
+theme: 'PaperMod'
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+params:
+    homeInfoParams:
+        Title: Andre Lim ZS
+        Content: Control Engineer
