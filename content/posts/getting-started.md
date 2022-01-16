@@ -47,7 +47,7 @@ $$
 $$
  
 
-### RAM Model
+### Random-access Machine (RAM) Model
 
 #### Instructions
 
