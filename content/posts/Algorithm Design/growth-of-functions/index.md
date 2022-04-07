@@ -1,7 +1,7 @@
 ---
 title: "Growth of Functions"
 date: 2022-01-17T23:05:22+08:00
-draft: false
+draft: true
 ShowToc: true
 math: true
 ---
@@ -10,9 +10,13 @@ math: true
 
 Order of growth is a simple characterization of an algorithm's efficiency and allows for comparison between algorithms.
 
+
+
 ### Asymptotic Efficiency
 
 When we look at input size $n$ large enough that only the order of growth matters. We are concerned with the running time *in the limit* as input increases without bound.
+
+---
 
 
 
@@ -37,7 +41,7 @@ $$
 $$
 $\Theta(n)$ is a set, but it is usually written as $f(n) = \Theta(n)$.
 
-{{< figure src="theta-notation.JPG" width=480 align="center" >}}
+{{< figure src="theta-notation.JPG" width=360  align="center" >}}
 
 $f(n)$ belongs to set $\Theta(g(n))$ if $c_1 \cdot g(n)$ and $c_2 \cdot g(n)$ can sandwidch the function, for large $n \geq n_0$. 
 
@@ -121,3 +125,140 @@ Commonly used to get asymptotic upper/lower bounds ( $O$ / $\Omega$ ) from tight
 > $ \Omega(n^2) = an^2 + bn + c$   and  $O(n^2) = an^2 + bn + c$
 >
 > imply that $ \Theta(n^2) = an^2 + bn + c $
+
+
+
+### Asymptotic Notation in Equations
+
+- $n = O(n^2)$ \
+  Refers to **set membership** $n \in O(n^2)$
+
+- In a formula ( $\dots = 2n^2 + \Theta(n)$ ) \
+  Stand-in for **some anonymous function**
+  ( $\Theta(n) = f(n)$ )
+- The number of anonymous functions is equal to the number of times it appears \
+  Eg: $\sum_i^n{ O(i) }$ appears once and not $O(1) + \dots + O(n)$
+- On the left-hand side (LHS) (It usually appears on the RHS) \
+  Means that there is always a way to choose LHS and RHS to make the equation hold \
+  The RHS is a **coarser** level of detail than the LHS
+- Can be **chained** \
+  Each equation can be interpreted separately
+
+
+
+### o-notation
+
+$o$-notation is a bound that is **not** asymptotically tight. ($O$-notation may or may not be asymptotically tight.)
+$$
+\begin{aligned}
+o \big( g(n) \big)
+= \\{ f(n) :\ \text{for any +ve constant } c>0, \text{ there exists } \\\\
+ \text{a constant } n_0 > 0 \text{ s.t. } 0 \leq f(n) < c g(n) \enspace \forall n \geq n_0
+\\}
+\end{aligned}
+$$
+The main difference between $o$-notation and $O$-notation is that the bound $0 \leq f(n) \leq cg(n)$ holds for all constants $c > 0$ instead of **some** constant.
+
+
+
+### $\omega$-notation
+
+Lower bound that is **not** asymptotically tight.
+$$
+\begin{aligned}
+o \big( g(n) \big)
+= \\{ f(n) :\ \text{for any +ve constant } c>0, \text{ there exists } \\\\
+ \text{a constant } n_0 > 0 \text{ s.t. } 0 \leq c g(n) < f(n) \enspace \forall n \geq n_0
+\\}
+\end{aligned}
+$$
+
+
+## Comparing Functions
+
+### Transitivity
+
+$f(n) = \Theta / O / \Omega (g(n))$ and $g(n) = \Theta / O / \Omega (h(n))$
+
+Implies $f(n) = \Theta / O / \Omega (h(n))$
+
+### Reflexivity
+
+$f(n) = \Theta / O / \Omega (f(n))$
+
+### Symmetry
+
+$f(n) = \Theta(g(n)) \Leftrightarrow g(n) = \Theta(f(n))$
+
+### Transpose Symmetry
+
+$f(n) = O(g(n)) \Leftrightarrow g(n) = \Omega(f(n))$
+
+$f(n) = o(g(n)) \Leftrightarrow g(n) = \omega(f(n))$
+
+
+
+These properties allow for an analogy between asymptotic notation and inequalities.
+
+$f(n) = O(g(n))  \quad\leftrightarrow\quad a \leq b \quad | \quad f(n) = o(g(n))  \quad\leftrightarrow\quad a < b$
+
+$f(n) = \Omega(g(n))  \quad\leftrightarrow\quad a \geq b \quad | \quad f(n) = \omega(g(n))  \quad\leftrightarrow\quad a > b$
+
+$f(n) = \Theta(g(n))  \quad\leftrightarrow\quad a = b$
+
+
+
+---
+
+## Standard Notations
+
+### Monotonicity
+
+$f(n)$ is **monotonically increasing** if $m \leq n$ implies $f(m) \leq f(n)$.
+
+$f(n)$ is **strictly increasing** if $m<n$ implies $f(m) < f(n)$
+
+### Floors and Ceilings
+
+- Floor $\lfloor x \rfloor$ : The least integer $\leq x$ 
+
+- Ceiling $\lceil x \rceil$ : The least integer $\geq x$
+
+Both are **monotonically increasing**
+
+Properties (for real $x$):
+
+- $x-1 < \lfloor x \rfloor \leq x \leq \lceil x \rceil < x+1$
+
+- $\lceil n/2 \rceil + \lfloor n/2 \rfloor = n$
+- $ \lceil \frac{1}{b} \lceil \frac{x}{a} \rceil \rceil = \lceil \frac{x}{ab} \rceil$
+- $\lceil \frac{a}{b} \rceil = \frac{a + b - 1}{b}$
+
+
+
+### Modular Arithmetic
+
+For integer $a$ and positive integer $n$, $a \text{ mod } n$ is the remainder of $a/n$
+
+$a \mod n = a - n \lfloor a/n \rfloor$
+
+And therefore $0 \leq a \mod n \leq n$
+
+**Equivalent** : $a \equiv b\ (\text{mod } n )$ if they have the same remainder.
+
+This also implies that $n$ is a divisor of $a-b$
+
+
+
+### Polynomials
+
+$$
+p(n) = \sum^d_{i=0} {a_i n^i}
+$$
+
+For integer $d \geq 0$
+
+Coefficients: $a_i$ and $a_d \neq 0$
+
+Asymptotically positive $ \Leftrightarrow a_d >0$
+

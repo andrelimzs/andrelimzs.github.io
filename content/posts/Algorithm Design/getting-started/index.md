@@ -1,7 +1,7 @@
 ---
 title: "CLRS - Getting Started"
 date: 2022-01-16T17:43:50+08:00
-draft: false
+draft: true
 ShowToc: true
 math: true
 ---
@@ -45,7 +45,7 @@ Assume each line requires a constant amount of time. The running time of an algo
 $$
 \sum \text{each individual line} \times \text{num of times executed}
 $$
- 
+
 
 ### Random-access Machine (RAM) Model
 
