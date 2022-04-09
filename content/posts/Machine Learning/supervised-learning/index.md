@@ -124,11 +124,11 @@ $\nabla_A f(A)$ is the Jacobian
 
 ### Least-Squares
 
-Set $\nabla_\theta J(\theta) = 0$ :
+Set $\nabla_\theta J(\theta) = 0$
 
 $$
 \begin{aligned}
-\nabla_\theta J(\theta) &= X^TX \theta - X^T y \\
+\nabla_\theta J(\theta) &= X^TX \theta - X^T y \cr
  X^TX \theta &= X^T y
 \end{aligned}
 $$
@@ -176,7 +176,7 @@ $$
 Can be written as
 $$
 \begin{aligned}
-L(\theta) &= \prod_{i=1}^{n} p(y^{(i)} | x^{(i)}; \theta) \\
+L(\theta) &= \prod_{i=1}^{n} p(y^{(i)} | x^{(i)}; \theta) \cr
 &= \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma}}
 \exp \left(
 	- \frac{ (y^{(i)} - \theta^T x^{(i)})^2 }
@@ -189,8 +189,8 @@ The **Principle of maximum likelihood** says that we should choose $\theta$ to m
 Maximising probability is equivalent to maximising **log likelihood**, $l(\theta)$.
 $$
 l(\theta) = 
-n \log \frac{1}{\sqrt{2\pi\sigma}}
-- \frac{1}{2\sigma^2} \sum_{i=1}^{n} 
+n \log \frac{1}{\sqrt{2\pi\sigma}} -
+\frac{1}{2\sigma^2} \sum_{i=1}^{n} 
 ( y^{(i)} - \theta^T x^{(i)} )^2
 $$
 Which is the same as minimizing the least-squares costs
@@ -259,7 +259,7 @@ $$
 Assume
 $$
 \begin{aligned}
-P(y=1 | x; \theta) &= h_\theta(x) \\
+P(y=1 | x; \theta) &= h_\theta(x) \cr
 P(y=0 | x; \theta) &= 1 - h_\theta(x)
 \end{aligned}
 $$
