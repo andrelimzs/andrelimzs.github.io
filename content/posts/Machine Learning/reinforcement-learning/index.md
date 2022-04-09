@@ -1,5 +1,5 @@
 ---
-title: "Reinforcement Learning"
+title: "CS229 Reinforcement Learning"
 date: 2022-04-08T23:59:00+08:00
 draft: false
 ShowToc: true
