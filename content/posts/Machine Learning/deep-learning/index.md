@@ -104,3 +104,49 @@ $$
 \end{aligned}
 $$
 
+### Vectorisation
+
+- Simplify expression using more matrix/vector notation
+- Important in speeding up neural networks
+  - Takes advantage of optimised linear algebra packages such as LAPACK/BLAS
+  - Leverages GPU parallelism
+
+Concatentae weights/inputs/outputs as
+$$
+W^{[i]} = \begin{bmatrix}
+-\ w^{[i]\top}_1 \ - \cr
+\vdots \cr
+-\ w^{[i]\top}_m \ -
+\end{bmatrix} \in \mathbb{R}^{m\times d}
+$$
+To get
+$$
+\underbrace{
+	\begin{bmatrix}
+		z^{[i]}_1 \cr
+		\vdots \cr
+		z^{[i]}_m
+    \end{bmatrix}
+}\_{z \in \mathbb{R}^{m\times 1}} =
+\underbrace{
+	\begin{bmatrix}
+		-\ w^{[i]\top}_1 \ - \cr
+		\vdots \cr
+		-\ w^{[i]\top}_m \ -
+	\end{bmatrix}
+}\_{W^{[1]} \in \mathbb{R}^{m\times d}}
+\underbrace{
+	\begin{bmatrix} x_1 \cr \vdots \cr x_d \end{bmatrix}
+}\_{x \in \mathbb{R}^{d\times 1}} +
+\underbrace{
+	\begin{bmatrix}
+		b^{[1]}_1 \cr
+		\vdots \cr
+		b^{[1]}_m
+	\end{bmatrix}
+}\_{b^{[1]} \in \mathbb{R}^{m\times 1}}
+$$
+Or equivalently
+$$
+z = W^{[1]}x + b^{[1]}
+$$
