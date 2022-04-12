@@ -241,3 +241,38 @@ p(y=1|x) = \frac{p(x|y=1) p(y=1)}{p(x)}
 $$
 
 
+## Laplace Smoothing
+
+- The first time the Naive Bayes algorithm encounters a new feature, it cannot estimate the probability
+
+$$
+\begin{aligned}
+	p(y=1|x) &= \frac
+	{ \prod_{j=1}^{d} p(x_j|y=1) p(y=1) }
+	{ \prod_{j=1}^{d} p(x_j|y=1) p(y=1) + \prod_{j=1}^{d} p(x_j|y=0) p(y=0) } \cr
+	p(y=1|x) &= \frac{0}{0}
+\end{aligned}
+$$
+
+- Because $\prod p(x_j|y)$ includes $p(x_{new}|y)$ which is $0$ and therefore it always obtains $0/0$.
+- It is a bad idea to estimate a previously unseen event to zero.
+
+**Solution**
+
+- Introduce **Laplace smoothing**
+
+$$
+\phi_j = \frac{1 + \sum_{i=1}^{n} 1 \{ z^{(i)}=j \}}
+{k+n}
+$$
+
+- Add $1$ to the numerator
+- Add $k$ to the denominator
+- $\sum_{j=1}^{k} \phi_j=1$ still holds
+- $\phi_j \neq 0$ for all $j$
+
+
+
+Under certain (strong) conditions
+
+- Laplace smoothing gives the optimal estimator
