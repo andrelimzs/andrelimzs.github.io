@@ -174,3 +174,38 @@ $$
 
 ### Connection to Kernel Method
 
+Deep learning is a method to automatically learn the best feature map (or representation)
+$$
+h_\theta(x) = W^{[r]} \phi_\beta(x) + b^{[r]}
+$$
+With $\beta: a^{[r-1]} = \phi_\beta(x)$ as the feature map
+
+The neural network is therefore a linear regression over the learnt (nonlinear) feature map $\phi_\beta$
+
+
+
+## Backpropagation
+
+Aka auto-differentiation
+
+Compute the gradient of the loss $\nabla J^{(j)} (\theta)$ efficiently
+
+**Theorem** (Informally)
+
+> Suppose a differentiable circuit of size $N$ computes a real-valued function $f:\mathbb R^l \rightarrow \mathbb R$. The gradient $\nabla f$ can be computed in $O(N)$ time by a circuit of size $O(N)$
+
+### Chain Rule
+
+For variables $\theta_1, \dots, \theta_p$ and intermediate variables $g_1, \dots, g_k$
+$$
+\begin{aligned}
+g_j = g_j(\theta_1, \dots, \theta_p) \cr
+J = J(g_1, \dots, g_k)
+\end{aligned}
+$$
+The chain rule states
+$$
+\frac{\partial J}{\partial \theta_i} = \sum^{k}_{j=1}
+\frac{\partial J}{\partial g_j}
+\frac{\partial g_j}{\partial \theta_i}
+$$
