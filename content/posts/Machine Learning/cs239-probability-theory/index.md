@@ -43,7 +43,7 @@ For an event $B$ with non-zero probability
 
 The conditional probability of $A$ given $B$ is
 $$
-P(A|B) \triangleq \frac{P A \cap B}{P(B)}
+P(A|B) \triangleq \frac{P (A \cap B)}{P(B)}
 $$
 
 ### Independence
@@ -387,7 +387,7 @@ It is a mapping from $\Omega \rightarrow \mathbb R^n$
 It is an alternative notation for multiple RVs
 $$
 X = \begin{bmatrix}
-X_1 \\ \vdots \\ X_n
+X_1 \cr \vdots \cr X_n
 \end{bmatrix}
 $$
 
@@ -395,7 +395,7 @@ $$
 
 $$
 E[g(X)] = \begin{bmatrix}
-E[g_1(X)] \\ \vdots \\ E[g_m(X)]
+E[g_1(X)] \cr \vdots \cr E[g_m(X)]
 \end{bmatrix}
 $$
 
