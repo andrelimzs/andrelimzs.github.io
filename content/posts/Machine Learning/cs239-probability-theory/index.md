@@ -43,7 +43,7 @@ For an event $B$ with non-zero probability
 
 The conditional probability of $A$ given $B$ is
 $$
-P(A|B) \triangleq \frac{P \cap B}{P(B)}
+P(A|B) \triangleq \frac{P A \cap B}{P(B)}
 $$
 
 ### Independence
