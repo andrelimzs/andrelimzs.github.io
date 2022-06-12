@@ -2,11 +2,6 @@
 title: Principles of Rapid Machine Design – Bamberg
 author: andrelimzs
 date: 2020-06-18T20:16:50+00:00
-url: /principles-of-rapid-machine-design-bamberg/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false

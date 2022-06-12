@@ -2,11 +2,6 @@
 title: Improving Rigidity
 author: andrelimzs
 date: 2020-06-10T07:21:37+00:00
-url: /improving-rigidity/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false

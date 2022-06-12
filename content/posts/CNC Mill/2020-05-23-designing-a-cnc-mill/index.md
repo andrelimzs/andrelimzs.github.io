@@ -2,11 +2,6 @@
 title: Designing a CNC Mill
 author: andrelimzs
 date: 2020-05-23T13:03:54+00:00
-url: /designing-a-cnc-mill/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 draft: false
 ---

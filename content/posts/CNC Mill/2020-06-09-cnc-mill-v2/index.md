@@ -2,11 +2,6 @@
 title: CNC Mill V2
 author: andrelimzs
 date: 2020-06-09T04:25:39+00:00
-url: /cnc-mill-v2/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false

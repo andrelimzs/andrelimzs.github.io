@@ -2,11 +2,6 @@
 title: Assembling the machine
 author: andrelimzs
 date: 2020-08-09T08:06:57+00:00
-url: /assembling-the-machine/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false
