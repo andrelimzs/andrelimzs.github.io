@@ -1,18 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Machine Learning on AndreLimZS</title><link>https://andrelimzs.github.io/posts/machine-learning/</link><description>Recent content in Machine Learning on AndreLimZS</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://andrelimzs.github.io/posts/machine-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>CS229 Reinforcement Learning</title><link>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</link><pubDate>Fri, 08 Apr 2022 23:59:00 +0800</pubDate><guid>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</guid><description>Reinforcement Learning Many sequential decision making and control problems are hard to provide explicit supervision for.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Machine Learning on AndreLimZS</title>
+    <link>https://andrelimzs.github.io/posts/machine-learning/</link>
+    <description>Recent content in Machine Learning on AndreLimZS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://andrelimzs.github.io/posts/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS229 Reinforcement Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</link>
+      <pubDate>Fri, 08 Apr 2022 23:59:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</guid>
+      <description>Reinforcement Learning Many sequential decision making and control problems are hard to provide explicit supervision for.
 Instead provide a reward function and let the learning algorithm figure out how to choose actions over time.
 Successful in applications such as helicopter flight, legged locomotion, network routing, marketing strategy selection, etc
 Markov Decision Processes (MDP) Provide formalism for many RL problems
-Terminology States : $s$ Actions : $a$ State Transition Probabilities : $P_{sa}$ Discount Factor : $\gamma \in [0,1)$ Reward Function : $R : S \times A \mapsto \mathbb{R}$ Dynamics of MDPs Start in some state $s_0$ Choose some action $a_0 \in A$ MDP randomly transitions to successor state $s_1 \sim P_{s_0a_0}$ Pick another action Repeat Represent as $$ s_0 \overset{a_0}{\rightarrow} s_1 \overset{a_1}{\rightarrow} s_2 \overset{a_2}{\rightarrow} s_3 \overset{a_3}{\rightarrow} \dots $$ Total Payoff $$ R(s_0, a_0) + \gamma R(s_1, a_1) + \gamma^2 R(s_2, a_2) + \dots $$ Goal : Maximise expected value of total payoff $$ E \left[ R(s_0) + \gamma R(s_1) + \gamma^2 R(s_2) + \dots \right] $$</description></item><item><title>CS229 Deep Learning</title><link>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</link><pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate><guid>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</guid><description>Deep Learning Supervised with Nonlinear Models Supervised learning is
+Terminology States : $s$ Actions : $a$ State Transition Probabilities : $P_{sa}$ Discount Factor : $\gamma \in [0,1)$ Reward Function : $R : S \times A \mapsto \mathbb{R}$ Dynamics of MDPs Start in some state $s_0$ Choose some action $a_0 \in A$ MDP randomly transitions to successor state $s_1 \sim P_{s_0a_0}$ Pick another action Repeat Represent as $$ s_0 \overset{a_0}{\rightarrow} s_1 \overset{a_1}{\rightarrow} s_2 \overset{a_2}{\rightarrow} s_3 \overset{a_3}{\rightarrow} \dots $$ Total Payoff $$ R(s_0, a_0) + \gamma R(s_1, a_1) + \gamma^2 R(s_2, a_2) + \dots $$ Goal : Maximise expected value of total payoff $$ E \left[ R(s_0) + \gamma R(s_1) + \gamma^2 R(s_2) + \dots \right] $$</description>
+    </item>
+    
+    <item>
+      <title>CS229 Deep Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</link>
+      <pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</guid>
+      <description>Deep Learning Supervised with Nonlinear Models Supervised learning is
 Predict $y$ from input $x$ Suppose model/hypothesis is $h_\theta(x)$ Previous methods have considered
 Linear regression : $h_\theta(x) = \theta^Tx$ Kernel method : $h_\theta(x) = \theta^T \phi(x)$ Both are linear in $\theta$
 Now consider models that are nonlinear in both
 Parameters : $\theta$ Inputs : $x$ The most common of which is the neural network
-Cost/Loss Function Define least-squares cost for one sample $$ J^{(i)}(\theta) = \frac{1}{2} ( h_\theta(x^{(i)}) - y^{(i)})^2 $$ and mean-square cost for the dataset $$ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} J^{(i)}(\theta) $$</description></item><item><title>CS229 Generative Learning</title><link>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</link><pubDate>Thu, 07 Apr 2022 22:00:00 +0800</pubDate><guid>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</guid><description>Generative Learning Different approach to learning
+Cost/Loss Function Define least-squares cost for one sample $$ J^{(i)}(\theta) = \frac{1}{2} ( h_\theta(x^{(i)}) - y^{(i)})^2 $$ and mean-square cost for the dataset $$ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} J^{(i)}(\theta) $$</description>
+    </item>
+    
+    <item>
+      <title>CS229 Generative Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</link>
+      <pubDate>Thu, 07 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</guid>
+      <description>Generative Learning Different approach to learning
 Try to model $p(x|y)$ and $p(y)$ instead of learning $p(y|x)$ directly
 $p(x|y)$ : Distribution of the target&amp;rsquo;s features $p(y)$ : Class priors Use Bayes rule to calculate posterior distribution $p(y|x)$ $$ p(y|x) = \frac{p(x|y) p(y)}{p(x)} $$ Can be simplified when using for prediction because denominator doesn&amp;rsquo;t matter $$ \arg \max_y P(y|x) = \arg \max_y p(x|y) p(y) $$
-Multivariate Normal Distribution In $d$-dimensions Parameterised by:</description></item><item><title>CS229 Supervised Learning</title><link>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</link><pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate><guid>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</guid><description>Supervised Learning Terminology Input (Features) : $x^{(i)}$ Output (Target) : $y^{(i)}$ Training example : $(x^{(i)}, y^{(i)})$ Training set : Set of training examples Hypothesis : $h(x)$ Types Regression : Continuous values Classification : Discrete values (Linear) Regression First decide the hypothesis function
+Multivariate Normal Distribution In $d$-dimensions Parameterised by:</description>
+    </item>
+    
+    <item>
+      <title>CS229 Supervised Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</link>
+      <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</guid>
+      <description>Supervised Learning Terminology Input (Features) : $x^{(i)}$ Output (Target) : $y^{(i)}$ Training example : $(x^{(i)}, y^{(i)})$ Training set : Set of training examples Hypothesis : $h(x)$ Types Regression : Continuous values Classification : Discrete values (Linear) Regression First decide the hypothesis function
 Where the convention is to let $x_0 = 1$ $$ h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 $$
-$$ h(x) = \sum_{i=0}^d \theta_i x_i = \theta^T x $$</description></item><item><title>CS229 Probability Theory</title><link>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</link><pubDate>Tue, 05 Apr 2022 22:00:00 +0800</pubDate><guid>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</guid><description>Review of Probability Theory Overview Probability is an important aspect of machine learning, and forms a useful basis for concepts. It is the study of uncertainty
+$$ h(x) = \sum_{i=0}^d \theta_i x_i = \theta^T x $$</description>
+    </item>
+    
+    <item>
+      <title>CS229 Probability Theory</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</link>
+      <pubDate>Tue, 05 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</guid>
+      <description>Review of Probability Theory Overview Probability is an important aspect of machine learning, and forms a useful basis for concepts. It is the study of uncertainty
 Elements of Probability Defining probability on a set requires the following:
 Sample Space : $\Omega$
-The set of all possible outcomes of a random experiment Each outcome $\omega \in \Omega$ is the complete description of the state at the end of the experiment Event Space (Set of events) : $\mathcal{F}$</description></item></channel></rss>
+The set of all possible outcomes of a random experiment Each outcome $\omega \in \Omega$ is the complete description of the state at the end of the experiment Event Space (Set of events) : $\mathcal{F}$</description>
+    </item>
+    
+  </channel>
+</rss>
