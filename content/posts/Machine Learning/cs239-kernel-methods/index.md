@@ -1,7 +1,7 @@
 ---
 title: "CS229 Kernel Methods"
-date: 2022-04-08T22:00:00+08:00
-draft: true
+date: 2022-04-08T22:30:00+08:00
+draft: false
 ShowToc: true
 math: true
 ---
