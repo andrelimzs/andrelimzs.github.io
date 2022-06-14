@@ -21,6 +21,18 @@ Terminology States : $s$ Actions : $a$ State Transition Probabilities : $P_{sa}$
     </item>
     
     <item>
+      <title>CS229 Kernel Methods</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-kernel-methods/</link>
+      <pubDate>Fri, 08 Apr 2022 22:30:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-kernel-methods/</guid>
+      <description>Kernel Methods What if $y$ can be more accurately represented as a nonlinear function of $x$?
+Regression can be performed on a nonlinear basis
+The original input attributes are mapped to new feature variables via a feature map, $\phi$
+LMS with Features Modify gradient descent for ordinary least squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}}) $$ and (SGD update rule) $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
+    </item>
+    
+    <item>
       <title>CS229 Deep Learning</title>
       <link>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</link>
       <pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate>
@@ -32,6 +44,19 @@ Linear regression : $h_\theta(x) = \theta^Tx$ Kernel method : $h_\theta(x) = \th
 Now consider models that are nonlinear in both
 Parameters : $\theta$ Inputs : $x$ The most common of which is the neural network
 Cost/Loss Function Define least-squares cost for one sample $$ J^{(i)}(\theta) = \frac{1}{2} ( h_\theta(x^{(i)}) - y^{(i)})^2 $$ and mean-square cost for the dataset $$ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} J^{(i)}(\theta) $$</description>
+    </item>
+    
+    <item>
+      <title>CS229 Support Vector Machine</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-support-vector-machine/</link>
+      <pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-support-vector-machine/</guid>
+      <description>Support Vector Machines For the linear classifier $$ h_{w,b}(x) = g(w^T x + b) $$ with $y \in {-1, 1}$
+Margins Margins represent the idea of how confident and correct a prediction is.
+Functional Margin, $\hat \gamma$ The functional margin is defined as $$ \hat{\gamma}^{(i)} = y^{(i)} (w^T x^{(i)} + b) $$
+And it requires some sort of normalization condition.
+Otherwise the functional margin can be made arbitrarily large by scaling $w$ and $b$ without changing the decision boundary.</description>
     </item>
     
     <item>
