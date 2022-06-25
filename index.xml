@@ -6,13 +6,24 @@
     <description>Recent content on AndreLimZS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Apr 2022 23:59:00 +0800</lastBuildDate><atom:link href="https://andrelimzs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 22:00:00 +0800</lastBuildDate><atom:link href="https://andrelimzs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CS229 Reinforcement Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</link>
-      <pubDate>Fri, 08 Apr 2022 23:59:00 +0800</pubDate>
+      <title>Generalization</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-generalization/</link>
+      <pubDate>Fri, 24 Jun 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-generalization/</guid>
+      <description>Generalization The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (generalizes well.
+Generalization is a model&amp;rsquo;s performance on unseen test data, measured by test error (loss on unseen test data).
+Test Error Loss/error on test examples $(x,y)$ sampled from a test distribution $\mathcal{D}$ $$ L(\theta) = \mathbb{E}_{(x,y)\sim\mathcal{D}} [ (y-h_\theta(x))^2] $$ The expectation $\mathbb E$ can be approximated by averaging many samples</description>
+    </item>
+    
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-reinforcement-learning/</link>
+      <pubDate>Mon, 11 Apr 2022 23:59:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-reinforcement-learning/</guid>
       <description>Reinforcement Learning Many sequential decision making and control problems are hard to provide explicit supervision for.
 Instead provide a reward function and let the learning algorithm figure out how to choose actions over time.
 Successful in applications such as helicopter flight, legged locomotion, network routing, marketing strategy selection, etc
@@ -21,23 +32,11 @@ Terminology States : $s$ Actions : $a$ State Transition Probabilities : $P_{sa}$
     </item>
     
     <item>
-      <title>CS229 Kernel Methods</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-kernel-methods/</link>
-      <pubDate>Fri, 08 Apr 2022 22:30:00 +0800</pubDate>
+      <title>Deep Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-deep-learning/</link>
+      <pubDate>Sun, 10 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-kernel-methods/</guid>
-      <description>Kernel Methods What if $y$ can be more accurately represented as a nonlinear function of $x$?
-Regression can be performed on a nonlinear basis
-The original input attributes are mapped to new feature variables via a feature map, $\phi$
-LMS with Features Modify gradient descent for ordinary least squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}}) $$ and (SGD update rule) $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
-    </item>
-    
-    <item>
-      <title>CS229 Deep Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</link>
-      <pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate>
-      
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-deep-learning/</guid>
       <description>Deep Learning Supervised with Nonlinear Models Supervised learning is
 Predict $y$ from input $x$ Suppose model/hypothesis is $h_\theta(x)$ Previous methods have considered
 Linear regression : $h_\theta(x) = \theta^Tx$ Kernel method : $h_\theta(x) = \theta^T \phi(x)$ Both are linear in $\theta$
@@ -47,11 +46,23 @@ Cost/Loss Function Define least-squares cost for one sample $$ J^{(i)}(\theta) =
     </item>
     
     <item>
-      <title>CS229 Support Vector Machine</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-support-vector-machine/</link>
+      <title>Kernel Methods</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-kernel-methods/</link>
+      <pubDate>Sat, 09 Apr 2022 22:30:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-kernel-methods/</guid>
+      <description>Kernel Methods What if $y$ can be more accurately represented as a nonlinear function of $x$?
+Regression can be performed on a nonlinear basis
+The original input attributes are mapped to new feature variables via a feature map, $\phi$
+LMS with Features Modify gradient descent for ordinary least squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}}) $$ and (SGD update rule) $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
+    </item>
+    
+    <item>
+      <title>Support Vector Machine</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-support-vector-machine/</link>
       <pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-support-vector-machine/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-support-vector-machine/</guid>
       <description>Support Vector Machines For the linear classifier $$ h_{w,b}(x) = g(w^T x + b) $$ with $y \in {-1, 1}$
 Margins Margins represent the idea of how confident and correct a prediction is.
 Functional Margin, $\hat \gamma$ The functional margin is defined as $$ \hat{\gamma}^{(i)} = y^{(i)} (w^T x^{(i)} + b) $$
@@ -60,11 +71,11 @@ Otherwise the functional margin can be made arbitrarily large by scaling $w$ and
     </item>
     
     <item>
-      <title>CS229 Generative Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</link>
+      <title>Generative Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-generative-learning/</link>
       <pubDate>Thu, 07 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-generative-learning/</guid>
       <description>Generative Learning Different approach to learning
 Try to model $p(x|y)$ and $p(y)$ instead of learning $p(y|x)$ directly
 $p(x|y)$ : Distribution of the target&amp;rsquo;s features $p(y)$ : Class priors Use Bayes rule to calculate posterior distribution $p(y|x)$ $$ p(y|x) = \frac{p(x|y) p(y)}{p(x)} $$ Can be simplified when using for prediction because denominator doesn&amp;rsquo;t matter $$ \arg \max_y P(y|x) = \arg \max_y p(x|y) p(y) $$
@@ -72,22 +83,22 @@ Multivariate Normal Distribution In $d$-dimensions Parameterised by:</descriptio
     </item>
     
     <item>
-      <title>CS229 Supervised Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</link>
+      <title>Supervised Learning</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-supervised-learning/</link>
       <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-supervised-learning/</guid>
       <description>Supervised Learning Terminology Input (Features) : $x^{(i)}$ Output (Target) : $y^{(i)}$ Training example : $(x^{(i)}, y^{(i)})$ Training set : Set of training examples Hypothesis : $h(x)$ Types Regression : Continuous values Classification : Discrete values (Linear) Regression First decide the hypothesis function
 Where the convention is to let $x_0 = 1$ $$ h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 $$
 $$ h(x) = \sum_{i=0}^d \theta_i x_i = \theta^T x $$</description>
     </item>
     
     <item>
-      <title>CS229 Probability Theory</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</link>
+      <title>Probability Theory</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-probability-theory/</link>
       <pubDate>Tue, 05 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-probability-theory/</guid>
       <description>Review of Probability Theory Overview Probability is an important aspect of machine learning, and forms a useful basis for concepts. It is the study of uncertainty
 Elements of Probability Defining probability on a set requires the following:
 Sample Space : $\Omega$

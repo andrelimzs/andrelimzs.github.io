@@ -3,30 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://andrelimzs.github.io/</loc>
-    <lastmod>2022-04-08T23:59:00+08:00</lastmod>
+    <lastmod>2022-06-24T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-reinforcement-learning/</loc>
-    <lastmod>2022-04-08T23:59:00+08:00</lastmod>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-generalization/</loc>
+    <lastmod>2022-06-24T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://andrelimzs.github.io/posts/</loc>
-    <lastmod>2022-04-08T23:59:00+08:00</lastmod>
+    <lastmod>2022-06-24T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-kernel-methods/</loc>
-    <lastmod>2022-04-08T22:30:00+08:00</lastmod>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-reinforcement-learning/</loc>
+    <lastmod>2022-04-11T23:59:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-deep-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-deep-learning/</loc>
+    <lastmod>2022-04-10T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-kernel-methods/</loc>
+    <lastmod>2022-04-09T22:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-support-vector-machine/</loc>
     <lastmod>2022-04-08T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-support-vector-machine/</loc>
-    <lastmod>2022-04-08T22:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-generative-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-generative-learning/</loc>
     <lastmod>2022-04-07T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-supervised-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-supervised-learning/</loc>
     <lastmod>2022-04-06T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs239-probability-theory/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-probability-theory/</loc>
     <lastmod>2022-04-05T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://andrelimzs.github.io/posts/cnc-mill/</loc>
