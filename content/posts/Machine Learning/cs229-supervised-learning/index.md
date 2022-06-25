@@ -1,5 +1,5 @@
 ---
-title: "CS229 Supervised Learning"
+title: "Supervised Learning"
 date: 2022-04-06T22:00:00+08:00
 draft: false
 ShowToc: true

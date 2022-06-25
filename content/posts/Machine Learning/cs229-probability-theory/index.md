@@ -1,5 +1,5 @@
 ---
-title: "CS229 Probability Theory"
+title: "Probability Theory"
 date: 2022-04-05T22:00:00+08:00
 draft: false
 ShowToc: true

@@ -1,5 +1,5 @@
 ---
-title: "CS229 Generative Learning"
+title: "Generative Learning"
 date: 2022-04-07T22:00:00+08:00
 draft: false
 ShowToc: true
