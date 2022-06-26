@@ -26,7 +26,7 @@ In classical methods : $R(\theta)$ depends only on parameters $\theta$</descript
       <pubDate>Thu, 23 Jun 2022 22:00:00 +0800</pubDate>
       
       <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-generalization/</guid>
-      <description>Generalization The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (generalizes well.
+      <description>Generalization The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (it generalizes well).
 Generalization is a model&amp;rsquo;s performance on unseen test data, measured by test error (loss on unseen test data).
 Test Error Loss/error on test examples $(x,y)$ sampled from a test distribution $\mathcal{D}$ $$ L(\theta) = \mathbb{E}_{(x,y)\sim\mathcal{D}} [ (y-h_\theta(x))^2] $$ The expectation $\mathbb E$ can be approximated by averaging many samples</description>
     </item>
