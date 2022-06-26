@@ -16,7 +16,7 @@
       <description>Regularization There is a tradeoff between bias (underfitting) and variance (overfitting). The optimal tradeoff requires computing the correct model complexity.
 Model Complexity : Can be a function of the parameters ($l_2$ norm) and not just the number of parameters
 Regularization : Allows us to:
-Control model complexity Prevent overfitting Regularizer Function A regularizer, $R(\theta)$, is a function which measures model complexity. It is usually nonnegative.
+Control model complexity Prevent overfitting Regularizer Function A regularizer $R(\theta)$, is a function which measures model complexity. It is usually nonnegative.
 In classical methods : $R(\theta)$ depends only on parameters $\theta$</description>
     </item>
     
