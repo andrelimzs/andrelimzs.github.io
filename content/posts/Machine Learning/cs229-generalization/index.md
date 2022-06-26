@@ -1,6 +1,6 @@
 ---
 title: "Generalization"
-date: 2022-06-24T22:00:00+08:00
+date: 2022-06-23T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true
@@ -8,7 +8,7 @@ math: true
 
 # Generalization
 
-The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (generalizes well. 
+The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (it generalizes well). 
 
 **Generalization** is a model's performance on *unseen* test data, measured by **test error** (loss on unseen test data).
 
@@ -72,15 +72,15 @@ $$
 $$
 Which results in a convex curve with one global optimum
 
-{{< figure src="tradeoff_bias_variance.jpg" width=632 align="center" caption="Stanford CS229 https://cs229.stanford.edu/" >}}
+{{< figure src="tradeoff_bias_variance.jpg" width=632 align="center" caption="CS229 https://cs229.stanford.edu/" >}}
 
 
 
 # Double Descent Phenomenon
 
-Empirical observation that test error can have a second descent, in the over-paramaterized regime (where number of parameters is larger than number of data points)
+Empirical observation that test error can have a second descent, in the over-parameterized regime (where number of parameters is larger than number of data points)
 
-{{< figure src="double_descent.jpg" width=480 align="center" caption="Stanford CS229 https://cs229.stanford.edu/" >}}
+{{< figure src="double_descent.jpg" width=480 align="center" caption="CS229 https://cs229.stanford.edu/" >}}
 
 Interestingly in many cases there is no second ascent. Meaning that larger models always lead to better performance
 
@@ -92,4 +92,4 @@ It's not clear that number of parameters is the best way to measure complexity o
 
 If the norm is used instead, there is no double descent phenomenon.
 
-{{< figure src="norm_complexity.jpg" width=800 align="center" caption="Stanford CS229 https://cs229.stanford.edu/" >}}
+{{< figure src="norm_complexity.jpg" width=800 align="center" caption="CS229 https://cs229.stanford.edu/" >}}
