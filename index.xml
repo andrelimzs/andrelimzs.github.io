@@ -8,9 +8,22 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Jun 2022 22:00:00 +0800</lastBuildDate><atom:link href="https://andrelimzs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Regularization and Model Selection</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-regularization-model-selection/</link>
+      <pubDate>Fri, 24 Jun 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-regularization-model-selection/</guid>
+      <description>Regularization There is a tradeoff between bias (underfitting) and variance (overfitting). The optimal tradeoff requires computing the correct model complexity.
+Model Complexity : Can be a function of the parameters ($l_2$ norm) and not just the number of parameters
+Regularization : Allows us to:
+Control model complexity Prevent overfitting Regularizer Function A regularizer, $R(\theta)$, is a function which measures model complexity. It is usually nonnegative.
+In classical methods : $R(\theta)$ depends only on parameters $\theta$</description>
+    </item>
+    
+    <item>
       <title>Generalization</title>
       <link>https://andrelimzs.github.io/posts/machine-learning/cs229-generalization/</link>
-      <pubDate>Fri, 24 Jun 2022 22:00:00 +0800</pubDate>
+      <pubDate>Thu, 23 Jun 2022 22:00:00 +0800</pubDate>
       
       <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-generalization/</guid>
       <description>Generalization The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (generalizes well.
