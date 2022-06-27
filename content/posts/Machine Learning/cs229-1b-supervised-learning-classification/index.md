@@ -9,33 +9,38 @@ url: posts/machine-learning/supervised-learning-classification
 
 # Classification
 
-Similar to regression, except $y$ only takes on a small number of discrete values
+Classification is similar to regression, except output $y$ only takes on a small number of discrete values, or **classes**.
 
 
 
 # Logistic Regression
 
-Start by ignoring the fact that $y$ is discrete
+Ignoring the fact that $y$ is discrete will often result in very poor performance. $h_\theta(x)$ should also be constrained to $y \in \{ 0, 1 \}$ 
 
-Use linear regression with modified hypothesis function
+One approach is to modify the hypothesis function to use the **logistic** / **sigmoid** function
 $$
 h_\theta(x) = g(\theta^Tx)
 = \frac{1}{1 + e^{-\theta^Tx}}
 $$
 where $g(z) = \frac{1}{1 + e^{-z}}$ is the **logistic**/**sigmoid** function
 
-$g(z)$ tends to $0$ or $1$ as $z \rightarrow -\infty$ or $z \rightarrow \infty$
+**Properties of Sigmoid**
 
-**Other Functions**
-
-Other functions can be used
-
-But sigmoid has a useful function that the derivative:
+$g(z)$ tends to:
+$$
+\left\\{ \begin{aligned}
+0 && z \rightarrow -\infty \cr
+1 && z \rightarrow \infty
+\end{aligned} \right.
+$$
+The derivative is
 $$
 g' = g(1 - g)
 $$
 
 ## Probabilistic Interpretation
+
+Similar to least-square regression, the classification model can be derived as a *maximum likelihood estimator* of $\theta$
 
 Assume
 $$
@@ -46,9 +51,10 @@ P(y=0 | x; \theta) &= 1 - h_\theta(x)
 $$
 or equivalently
 $$
-P(y | x; \theta) = [h_\theta(x)]^y [1-h_\theta(x)]^{1-y}
+P(y | x; \theta) =
+\left( h_\theta(x) \right)^y \ \left( 1-h_\theta(x) \right)^{1-y}
 $$
-For $n$ independent training examples the likelihood function is
+For $n$ independent training examples the *likelihood function* (distribution of $y$ given $x$ and parameterised by $\theta$) is
 $$
 \begin{aligned}
 L(\theta) &= p(y | X;\theta) \cr
@@ -58,43 +64,42 @@ L(\theta) &= p(y | X;\theta) \cr
 	\left(1 - h_\theta(x^{(i)}) \right)^{1-y^{(i)}}
 \end{aligned}
 $$
-Which can also be transformed into log likelihood
+Which can be transformed into *log likelihood*
 $$
 l(\theta) = \sum_{i=1}^{n} y^{(i)}
 \log h(x^{(i)}) + (1 - y^{(i)}) \log(1 - h(x^{(i)}))
 $$
-And maximise using **gradient ascent**
+And maximised using **gradient ascent**
 
 ## Gradient Ascent rule
 
-The updates are
+The update rule is
 $$
 \frac{\partial}{\partial \theta_j} l(\theta) =
-(y - h_\theta(x)) x_j
+(y - h_\theta(x)) \ x_j
 $$
 
+Which gives the stochastic gradient ascent rule
 $$
 \theta_j := \theta_j + \alpha
 \left( y^{(i)} - h_\theta(x^{(i)})
 \right)\ x_j^{(i)}
 $$
 
-# Newton's Method
+# Other Optimizers - Newton's Method
 
-An alternative method to gradient descent is newton's method
-
-To **Maximise**
+An alternative method to gradient descent is newton's method. It uses the fact that the maxima of a function is the point where the first derivative is zero
 $$
 \theta := \theta - \frac{l'(\theta)}{l''(\theta)}
 $$
 
 ## Vector-Valued Generalisation
 
-Newton-Raphson method
+The generalisation is called the **Newton-Raphson** method
 $$
 \theta = \theta - H^{-1} \nabla_\theta l(\theta)
 $$
-Where $H \in \mathbb{R}^{(d+1) \times (d+1)}$ is the **Hessian**
+Where $\nabla_\theta l(\theta)$ is the *Jacobian* and $H$ is the **Hessian**
 $$
 H_{ij} = \frac{\partial^2 l(\theta)}{\partial \theta_i \ \partial \theta_j}
 $$
