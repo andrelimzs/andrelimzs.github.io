@@ -69,50 +69,42 @@ Measure of the accuracy or error of the model. The cost is driven to zero to fit
 
 
 
-# Least Mean Squares (LMS) Algorithm
+# Gradient Descent
 
-Least mean squares, or Widrow-Hoff learning rule
+An optimisation algorithm commonly used to fit machine learning models. It is an iterative, first-order approach. It is also known as the **Least mean square (LMS)** update rule or **Widrow-Hoff** learning rule.
 
-1. Start with an initial guess
-2. Repeatedly perturb $\theta$ 
-3. Hope it converges
-
-
-
-## Gradient Descent
-
+The update (for single training example)
 $$
 \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta)
 $$
 
-**Learning Rate** : $\alpha$ 
-
-The **single training example case $(x,y)$** reduces to
-$$
-\theta_j := \theta_j + \alpha (y^{(i)} - h_\theta (x^{(i)})) x_j^{(i)}
-$$
-The update is **proportional** to the **error**
-$$
-\text{update} \propto (y - h_\theta(x))
-$$
+moves $\theta$ in the direction of best improvement
 
 
 
 ## Batch Gradient Descent
 
-Group updates into vector $x$
+More generally, gradient descent can be applied to multiple training examples **simultaneously** by grouping updates into vector $x$
 $$
-\theta := \theta + \alpha \sum_{i=1}^{n}
+\theta := \theta + \alpha
+\underbrace{\sum_{i=1}^{n}
 \left(
 	y^{(i)}- h_\theta(x^{(i)})
-\right) x^{(i)}
+\right) x^{(i)} }_{\large = \frac{\partial J}{\partial \theta} \quad}
 $$
-Which is equivalent to gradient descent on the original cost function $J$
+Which is equivalent to gradient descent on the original cost function $J$.
+
+Batch gradient descent looks at **every** example on every iteration and can therefore be slow.
 
 
 
-## Stochastic Gradient Descent
+## Stochastic Gradient Descent (SGD)
 
+An alternative to batch gradient descent is stochastic gradient descent (also known as incremental gradient descent).
+
+SGD updates the weights $\theta$ **on every iteration**, making much quicker progress for large datasets.
+
+The update rule is given by
 $$
 \theta := \theta + \alpha
 \left(
@@ -120,7 +112,9 @@ $$
 \right) x^{(i)}
 $$
 
-And repeatedly run through the training set
+which is repeatedly run through a loop
+
+
 
 ## Batch vs SGD
 
@@ -133,38 +127,37 @@ In most cases being close to the minimum is good enough, and therefore people ch
 
 
 
-# The Normal Equations
+# The Normal Equations (Explicit Minimisation)
 
-Minimise explicitly by taking the derivatives w.r.t $J$ and setting to zero
+In the case of linear regression, $J$ can be minimised explicitly by taking the derivatives w.r.t $J$ and setting them to zero
 
-**Matrix Derivatives** : For function $f : \mathbb{R}^{n \times d} \rightarrow \mathbb{R}$
+**Matrix Derivatives** : For function $f : \mathbb{R}^{n \times d} \rightarrow \mathbb{R}$ the Jacobian is $\nabla_A f(A)$
 
-The Jacobian is
-$$
-\nabla_A f(A)
-$$
-
-
-## Least-Squares
+## Least-Squares via Moore-Penrose Psuedoinverse
 
 Set $\nabla_\theta J(\theta) = 0$
 
 $$
-\begin{aligned}
-\nabla_\theta J(\theta) &= X^TX \theta - X^T y \cr
- X^TX \theta &= X^T y
-\end{aligned}
+\underbrace{\nabla_\theta J(\theta)}_{= 0} =
+X^TX \theta - X^T y
 $$
-Which gives
+Therefore
+$$
+X^TX \theta = X^T y
+$$
+Which gives the closed-form solution
 $$
 \theta = (X^TX)^{-1} X^T y
 $$
 
 ## Probabilistic Interpretation
 
+Linear regression with least-squares cost can be derived from statistical methods to give a probability interpretation.  
+
 Assume target and inputs are related via
 $$
-y^{(i)} = \theta^T x^{(i)} + \epsilon^{(i)}
+y^{(i)} = \theta^T x^{(i)} + 
+\underbrace{ \epsilon^{(i)} }_\text{noise}
 $$
 where $\epsilon^{(i)}$ are unmodelled effects/noise
 
@@ -176,7 +169,7 @@ p(\epsilon^{(i)}) =
 	- \frac{(\epsilon^{(i)})^2}{2\sigma^2}
 \right)
 $$
-which implies
+Which implies that $y$ given $x$ parameterised by $\theta$ is gaussian
 $$
 p(y^{(i)} | x^{(i)};\theta) =
 \frac{1}{\sqrt{2\pi\sigma}}
@@ -192,9 +185,16 @@ $$
 
 ## Likelihood Function
 
-Given $X$ and $\theta$, what is the distribution of $y^{(i)}$s?
+The likelihood function answers the question 
+
+>  Given $X$ and $\theta$, what is the distribution of $y^{(i)}$s?
+
 $$
-L(\theta) = L(\theta; X, \vec{y}) = p(\vec{y}|X;\theta)
+\begin{aligned}
+L(\theta)
+	&= L(\theta; X, \vec{y}) \cr
+	&= p(\vec{y}|X;\theta)
+\end{aligned}
 $$
 Can be written as
 $$
@@ -207,9 +207,11 @@ L(\theta) &= \prod_{i=1}^{n} p(y^{(i)} | x^{(i)}; \theta) \cr
 \right)
 \end{aligned}
 $$
-The **Principle of maximum likelihood** says that we should choose $\theta$ to make the probability as high as possible.
+## Maximum Likelihood Estimation (MLE) of $\theta$
 
-Maximising probability is equivalent to maximising **log likelihood**, $l(\theta)$.
+The **Principle of maximum likelihood** says that we should choose $\theta$ to maximise $L(\theta)$ (make the probability of $y$ given $x$ as high as possible)
+
+To simplify the procedure, the we can maximise any strictly increasing function of $L(\theta)$ such as **log likelihood**, $l(\theta)$.
 $$
 l(\theta) = 
 n \log \frac{1}{\sqrt{2\pi\sigma}} -
@@ -221,13 +223,15 @@ $$
 J(\theta) = \frac{1}{2} \sum_{i=1}^{n} 
 ( y^{(i)} - \theta^T x^{(i)} )^2
 $$
-[*] This result does not depend on $\sigma$
-
 
 
 # Locally Weighted Linear Regression (LWR)
 
-Assuming sufficient training data, makes choice of features less important
+The choice of features is important because it can result in overfitting or underfitting.
+
+{{< figure src="feature-choice.jpg" width=800 align="center" >}}
+
+But one method to make the choice of features less critical is **locally weighted linear regression** (LWR), assuming there is sufficient training data.
 
 **Procedure**
 
