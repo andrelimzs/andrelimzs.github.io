@@ -11,7 +11,9 @@ url: posts/machine-learning/supervised-learning-classification
 
 Similar to regression, except $y$ only takes on a small number of discrete values
 
-## Logistic Regression
+
+
+# Logistic Regression
 
 Start by ignoring the fact that $y$ is discrete
 
@@ -63,7 +65,7 @@ l(\theta) = \sum_{i=1}^{n} y^{(i)}
 $$
 And maximise using **gradient ascent**
 
-### Gradient Ascent rule
+## Gradient Ascent rule
 
 The updates are
 $$
