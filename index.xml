@@ -9,19 +9,19 @@
     <lastBuildDate>Sat, 25 Jun 2022 22:00:00 +0800</lastBuildDate><atom:link href="https://andrelimzs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unsupervised Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-8-unsupervised-learning/</link>
+      <link>https://andrelimzs.github.io/posts/machine-learning/unsupervised-learning/</link>
       <pubDate>Sat, 25 Jun 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-8-unsupervised-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/unsupervised-learning/</guid>
       <description>Clustering &amp;amp; K-Means Expectation Maximization (EM) Algorithms Principal Component Analysis (PCA) Independent Component Analysis (ICA) Self-Supervised Learning </description>
     </item>
     
     <item>
       <title>Regularization and Model Selection</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-7-regularization-model-selection/</link>
+      <link>https://andrelimzs.github.io/posts/machine-learning/regularization/</link>
       <pubDate>Fri, 24 Jun 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-7-regularization-model-selection/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/regularization/</guid>
       <description>Regularization There is a tradeoff between bias (underfitting) and variance (overfitting). The optimal tradeoff requires computing the correct model complexity.
 Model Complexity : Can be a function of the parameters ($l_2$ norm) and not just the number of parameters
 Regularization : Allows us to:
@@ -31,21 +31,21 @@ In classical methods : $R(\theta)$ depends only on parameters $\theta$</descript
     
     <item>
       <title>Generalization</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-6-generalization/</link>
+      <link>https://andrelimzs.github.io/posts/machine-learning/generalisation/</link>
       <pubDate>Thu, 23 Jun 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-6-generalization/</guid>
-      <description>Generalization The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (it generalizes well).
+      <guid>https://andrelimzs.github.io/posts/machine-learning/generalisation/</guid>
+      <description>Generalisation The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (it generalises well).
 Generalization is a model&amp;rsquo;s performance on unseen test data, measured by test error (loss on unseen test data).
 Test Error Loss/error on test examples $(x,y)$ sampled from a test distribution $\mathcal{D}$ $$ L(\theta) = \mathbb{E}_{(x,y)\sim\mathcal{D}} [ (y-h_\theta(x))^2] $$ The expectation $\mathbb E$ can be approximated by averaging many samples</description>
     </item>
     
     <item>
       <title>Reinforcement Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-9-reinforcement-learning/</link>
+      <link>https://andrelimzs.github.io/posts/machine-learning/reinforcement-learning/</link>
       <pubDate>Mon, 11 Apr 2022 23:59:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-9-reinforcement-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/reinforcement-learning/</guid>
       <description>Reinforcement Learning Many sequential decision making and control problems are hard to provide explicit supervision for.
 Instead provide a reward function and let the learning algorithm figure out how to choose actions over time.
 Successful in applications such as helicopter flight, legged locomotion, network routing, marketing strategy selection, etc
@@ -55,10 +55,10 @@ Terminology States : $s$ Actions : $a$ State Transition Probabilities : $P_{sa}$
     
     <item>
       <title>Deep Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-5-deep-learning/</link>
+      <link>https://andrelimzs.github.io/posts/machine-learning/deep-learning/</link>
       <pubDate>Sun, 10 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-5-deep-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/deep-learning/</guid>
       <description>Deep Learning Supervised with Nonlinear Models Supervised learning is
 Predict $y$ from input $x$ Suppose model/hypothesis is $h_\theta(x)$ Previous methods have considered
 Linear regression : $h_\theta(x) = \theta^Tx$ Kernel method : $h_\theta(x) = \theta^T \phi(x)$ Both are linear in $\theta$
@@ -68,23 +68,11 @@ Cost/Loss Function Define least-squares cost for one sample $$ J^{(i)}(\theta) =
     </item>
     
     <item>
-      <title>Kernel Methods</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-3-kernel-methods/</link>
-      <pubDate>Sat, 09 Apr 2022 22:30:00 +0800</pubDate>
+      <title>Support Vector Machine (SVM)</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/support-vector-machines/</link>
+      <pubDate>Sat, 09 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-3-kernel-methods/</guid>
-      <description>Kernel Methods What if $y$ can be more accurately represented as a nonlinear function of $x$?
-Regression can be performed on a nonlinear basis
-The original input attributes are mapped to new feature variables via a feature map, $\phi$
-LMS with Features Modify gradient descent for ordinary least squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}}) $$ and (SGD update rule) $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
-    </item>
-    
-    <item>
-      <title>Support Vector Machine</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-4-support-vector-machine/</link>
-      <pubDate>Fri, 08 Apr 2022 22:00:00 +0800</pubDate>
-      
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-4-support-vector-machine/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/support-vector-machines/</guid>
       <description>Support Vector Machines For the linear classifier $$ h_{w,b}(x) = g(w^T x + b) $$ with $y \in {-1, 1}$
 Margins Margins represent the idea of how confident and correct a prediction is.
 Functional Margin, $\hat \gamma$ The functional margin is defined as $$ \hat{\gamma}^{(i)} = y^{(i)} (w^T x^{(i)} + b) $$
@@ -93,11 +81,23 @@ Otherwise the functional margin can be made arbitrarily large by scaling $w$ and
     </item>
     
     <item>
+      <title>Kernel Methods</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/kernel-methods/</link>
+      <pubDate>Fri, 08 Apr 2022 22:30:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/kernel-methods/</guid>
+      <description>Kernel Methods What if $y$ can be more accurately represented as a nonlinear function of $x$?
+Regression can be performed on a nonlinear basis
+The original input attributes are mapped to new feature variables via a feature map, $\phi$
+LMS with Features Modify gradient descent for ordinary least squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}}) $$ and (SGD update rule) $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
+    </item>
+    
+    <item>
       <title>Generative Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-2-generative-learning/</link>
+      <link>https://andrelimzs.github.io/posts/machine-learning/generative-learning/</link>
       <pubDate>Thu, 07 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-2-generative-learning/</guid>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/generative-learning/</guid>
       <description>Generative Learning Different approach to learning
 Try to model $p(x|y)$ and $p(y)$ instead of learning $p(y|x)$ directly
 $p(x|y)$ : Distribution of the target&amp;rsquo;s features $p(y)$ : Class priors Use Bayes rule to calculate posterior distribution $p(y|x)$ $$ p(y|x) = \frac{p(x|y) p(y)}{p(x)} $$ Can be simplified when using for prediction because denominator doesn&amp;rsquo;t matter $$ \arg \max_y P(y|x) = \arg \max_y p(x|y) p(y) $$
@@ -105,14 +105,47 @@ Multivariate Normal Distribution In $d$-dimensions Parameterised by:</descriptio
     </item>
     
     <item>
-      <title>Supervised Learning</title>
-      <link>https://andrelimzs.github.io/posts/machine-learning/cs229-1-supervised-learning/</link>
+      <title>Generalised Linear Models (GLM)</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/generalised-linear-models/</link>
       <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
       
-      <guid>https://andrelimzs.github.io/posts/machine-learning/cs229-1-supervised-learning/</guid>
-      <description>Supervised Learning Terminology Input (Features) : $x^{(i)}$ Output (Target) : $y^{(i)}$ Training example : $(x^{(i)}, y^{(i)})$ Training set : Set of training examples Hypothesis : $h(x)$ Types Regression : Continuous values Classification : Discrete values (Linear) Regression First decide the hypothesis function
-Where the convention is to let $x_0 = 1$ $$ h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 $$
-$$ h(x) = \sum_{i=0}^d \theta_i x_i = \theta^T x $$</description>
+      <guid>https://andrelimzs.github.io/posts/machine-learning/generalised-linear-models/</guid>
+      <description>Generalised Linear Models (GLM) Show that both linear regression and classification are special cases of Generalised Linear Models
+Exponential Family The class of distributions in the exponential family is $$ p(y; \eta) = b(y)\ e^{\eta^T\ T(y)}\ e^{-a(\eta))} $$
+$\eta$ : natural (canonical) parameter $T(y)$ : sufficient statistic Often let $T(y) = y$ $a(\eta)$ : log partition function $e^{-a(\eta)}$ normalises the distribution and ensures it sums to $1$
+Family/Set Defined by a (fixed) choice of $(T, a, b)$</description>
+    </item>
+    
+    <item>
+      <title>Supervised Learning - Classification</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-classification/</link>
+      <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-classification/</guid>
+      <description>Classification Similar to regression, except $y$ only takes on a small number of discrete values
+Logistic Regression Start by ignoring the fact that $y$ is discrete
+Use linear regression with modified hypothesis function $$ h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^Tx}} $$ where $g(z) = \frac{1}{1 + e^{-z}}$ is the logistic/sigmoid function
+$g(z)$ tends to $0$ or $1$ as $z \rightarrow -\infty$ or $z \rightarrow \infty$
+Other Functions
+Other functions can be used</description>
+    </item>
+    
+    <item>
+      <title>Supervised Learning - Regression</title>
+      <link>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-regression/</link>
+      <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-regression/</guid>
+      <description>Supervised Learning Supervised learning is the task of learning a function mapping from input to output $$ y = f(x) $$ The relationship can be linear/nonlinear or convex/nonconvex. The approach learns from labeled data.
+Terminology Input (Features) : $x^{(i)}$
+Output (Target) : $y^{(i)}$
+Training example : $(x^{(i)}, y^{(i)})$
+Hypothesis : $h(x)$
+Parameters / Weights : $\theta$
+Types Regression : Continuous values
+Classification : Discrete values
+Linear Regression Objective
+Learn parameters $\theta$ for a given hypthesis function $h$ to best predict output $y$ from input $x$</description>
     </item>
     
     <item>

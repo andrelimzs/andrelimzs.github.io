@@ -8,31 +8,37 @@
     <loc>https://andrelimzs.github.io/posts/</loc>
     <lastmod>2022-06-25T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-8-unsupervised-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/unsupervised-learning/</loc>
     <lastmod>2022-06-25T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-7-regularization-model-selection/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/regularization/</loc>
     <lastmod>2022-06-24T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-6-generalization/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/generalisation/</loc>
     <lastmod>2022-06-23T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-9-reinforcement-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/reinforcement-learning/</loc>
     <lastmod>2022-04-11T23:59:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-5-deep-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/deep-learning/</loc>
     <lastmod>2022-04-10T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-3-kernel-methods/</loc>
-    <lastmod>2022-04-09T22:30:00+08:00</lastmod>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/support-vector-machines/</loc>
+    <lastmod>2022-04-09T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-4-support-vector-machine/</loc>
-    <lastmod>2022-04-08T22:00:00+08:00</lastmod>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/kernel-methods/</loc>
+    <lastmod>2022-04-08T22:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-2-generative-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/generative-learning/</loc>
     <lastmod>2022-04-07T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-1-supervised-learning/</loc>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/generalised-linear-models/</loc>
+    <lastmod>2022-04-06T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-classification/</loc>
+    <lastmod>2022-04-06T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-regression/</loc>
     <lastmod>2022-04-06T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://andrelimzs.github.io/posts/machine-learning/cs229-0-probability-theory/</loc>
