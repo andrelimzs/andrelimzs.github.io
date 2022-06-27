@@ -122,12 +122,9 @@ Family/Set Defined by a (fixed) choice of $(T, a, b)$</description>
       <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
       
       <guid>https://andrelimzs.github.io/posts/machine-learning/supervised-learning-classification/</guid>
-      <description>Classification Similar to regression, except $y$ only takes on a small number of discrete values
-Logistic Regression Start by ignoring the fact that $y$ is discrete
-Use linear regression with modified hypothesis function $$ h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^Tx}} $$ where $g(z) = \frac{1}{1 + e^{-z}}$ is the logistic/sigmoid function
-$g(z)$ tends to $0$ or $1$ as $z \rightarrow -\infty$ or $z \rightarrow \infty$
-Other Functions
-Other functions can be used</description>
+      <description>Classification Classification is similar to regression, except output $y$ only takes on a small number of discrete values, or classes.
+Logistic Regression Ignoring the fact that $y$ is discrete will often result in very poor performance. $h_\theta(x)$ should also be constrained to $y \in { 0, 1 }$
+One approach is to modify the hypothesis function to use the logistic / sigmoid function $$ h_\theta(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^Tx}} $$ where $g(z) = \frac{1}{1 + e^{-z}}$ is the logistic/sigmoid function</description>
     </item>
     
     <item>
