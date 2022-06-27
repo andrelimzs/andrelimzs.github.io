@@ -4,11 +4,12 @@ date: 2022-06-23T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true
+url: posts/machine-learning/generalisation
 ---
 
-# Generalization
+# Generalisation
 
-The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (it generalizes well). 
+The ultimate goal of machine learning is to create a predictive model which performs well on unseen examples (it generalises well). 
 
 **Generalization** is a model's performance on *unseen* test data, measured by **test error** (loss on unseen test data).
 
