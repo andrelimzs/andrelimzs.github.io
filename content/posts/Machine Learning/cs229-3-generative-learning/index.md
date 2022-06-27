@@ -4,6 +4,7 @@ date: 2022-04-07T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true
+url: posts/machine-learning/generative-learning
 ---
 
 # Generative Learning
