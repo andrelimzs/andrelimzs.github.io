@@ -110,10 +110,10 @@ Multivariate Normal Distribution In $d$-dimensions Parameterised by:</descriptio
       <pubDate>Wed, 06 Apr 2022 22:00:00 +0800</pubDate>
       
       <guid>https://andrelimzs.github.io/posts/machine-learning/generalised-linear-models/</guid>
-      <description>Generalised Linear Models (GLM) Show that both linear regression and classification are special cases of Generalised Linear Models
-Exponential Family The class of distributions in the exponential family is $$ p(y; \eta) = b(y)\ e^{\eta^T\ T(y)}\ e^{-a(\eta))} $$
-$\eta$ : natural (canonical) parameter $T(y)$ : sufficient statistic Often let $T(y) = y$ $a(\eta)$ : log partition function $e^{-a(\eta)}$ normalises the distribution and ensures it sums to $1$
-Family/Set Defined by a (fixed) choice of $(T, a, b)$</description>
+      <description>Generalised Linear Models (GLM) Generalised Linear Models (GLMs) are a family of models which include many common distributions such as Gaussian, Bernoulli and Multinomial.
+The Exponential Family The exponential family serves as a starting point for GLMs.
+The exponential family is defined as $$ p(y; \eta) = b(y) \ \exp{\left( \eta^T\ T(y) - a(\eta) \right)} $$
+Natural (Canonical) parameter : $\eta$ Sufficient statistic : $T(y)$ Log Partition function : $a(\eta)$ $T(y)$ is often chosen to be $T(y) = y$</description>
     </item>
     
     <item>
