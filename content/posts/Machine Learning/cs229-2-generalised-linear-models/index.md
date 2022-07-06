@@ -9,70 +9,74 @@ url: posts/machine-learning/generalised-linear-models
 
 # Generalised Linear Models (GLM)
 
-Show that both linear regression and classification are special cases of **Generalised Linear Models**
+Generalised Linear Models (GLMs) are a family of models which include many common distributions such as Gaussian, Bernoulli and Multinomial.
 
-## Exponential Family
+## The Exponential Family
 
-The class of distributions in the exponential family is
+The exponential family serves as a starting point for GLMs.
+
+The exponential family is defined as
 $$
-p(y; \eta) = b(y)\ e^{\eta^T\ T(y)}\ e^{-a(\eta))}
+p(y; \eta) = b(y)
+\ \exp{\left( \eta^T\ T(y) - a(\eta) \right)}
 $$
 
-- $\eta$ : **natural (canonical) parameter**
-- $T(y)$ : **sufficient statistic** \
-  Often let $T(y) = y$
-- $a(\eta)$ : **log partition function**
+- **Natural (Canonical) parameter** : $\eta$ 
+- **Sufficient statistic** : $T(y)$ 
+- **Log Partition function** : $a(\eta)$
 
-$e^{-a(\eta)}$ normalises the distribution and ensures it sums to $1$
+$T(y)$ is often chosen to be $T(y) = y$
 
-### Family/Set
+$e^{-a(\eta)}$ serves as a normalisation constant, and ensures the distribution sums to $1$
 
-Defined by a (fixed) choice of $(T, a, b)$
+### Family / Set Of Distributions
 
-And parameterized by $\eta$
+A family or set of distributions is defined by $(T, a, b)$ and parameterized by $\eta$
 
-### Bernoulli
+### Bernoulli as Exponential Family
 
-With mean $\phi$ defines a distribution over $y \in \{0,1\}$
+The Bernoulli distribution is in the exponential family. It is a distribution over $y \in \{0,1\}$, with mean $\phi$. Varying $\phi$ gives different Bernoulli distributions.
 
-Varying $\phi$ gives different Bernoulli distributions
-
+The Bernoulli distribution can be shown to be an exponential family distribution by manipulating the equation into the form $p = b \exp \left( \eta T - a \right)$
 $$
 \begin{aligned}
 p(y; \phi) &= \phi^y (1 - \phi)^{1-y} \cr
 &= \exp \left( y\log\phi + (1-y) \log(1-\phi) \right) \cr
-&= \underbrace{1}_y \exp (
-    \underbrace{\left(\log \phi/(1-\phi) \right)}_n
-    \ \underbrace{y}_T +
-    \underbrace{\log(1-\phi)}_a
-    )
+&= \underbrace{1 \vphantom{\frac{}{}} }_b
+\exp {\large(}
+	\underbrace{\log \frac{\phi}{1-\phi} }\_\eta
+	\ \underbrace{y \vphantom{\frac{}{}} }_T +
+	\underbrace{ \log(1-\phi) \vphantom{\frac{}{}} }_a
+{\large)}
 \end{aligned}
 $$
 
-Which shows that is is part of the exponential family
 
-### Gaussian
 
+### Gaussian as Exponential Family
+
+Similarly for the Gaussian distribution
 $$
 \begin{aligned}
 p(y; \mu) &= \frac{1}{\sqrt{2\pi}} \left(-\frac{1}{2} 
 (y-\mu)^2 \right) \cr
 &= \underbrace{\frac{1}{\sqrt{2\pi}}
 \exp (-\frac{1}{2} y^2)}_b \cdot
-\exp (\underbrace{\mu}_n
-	\underbrace{y}_T
-	- \underbrace{\frac{1}{2} \mu^2}_a )
+\exp (
+	\underbrace{\mu \vphantom{\frac{}{}} }_n
+	\underbrace{y \vphantom{\frac{}{}} }_T -
+	\underbrace{\frac{1}{2} \mu^2}_a
+)
 \end{aligned}
 $$
 
-### Other Distributions
+### Other Distributions in the Exponential Family
 
-- Multinomial
-- Poisson
-- Gamma
-- Exponential
-- Beta
-- Dirichlet
+There are many other common distributions such as:
+
+- Multinomial, Poisson
+- Gamma, Exponential
+- Beta, Dirichlet
 
 
 
@@ -80,69 +84,86 @@ $$
 
 Consider a classification/regression problem where we want to predict $y$ as a function of $x$
 
-Make three assumptions
+If we make three assumptions
 
-- $y\ |\ x;\theta \sim \text{ExpFamily}(\eta)$ \
-  Given $x$ and $\theta$, y is some exponential family distribution parameterised by $\eta$
-- Predict $\mathbb{E}[T(y)]$ given $x$
-- Natural parameter $\eta$ and inputs $x$ are linear 
-
+1 . Given $x$ and $\theta$, $y$ is some exponential family distribution with parameter $\eta$
+$$
+y\ |\ x;\theta \sim \text{ExpFamily}(\eta)
+$$
+2 . Given $x$, predict $\mathbb{E}[T(y)]$ 
+$$
+\text{Want } h(x) = \mathbb{E} [ T(y) \ | \ x]
+$$
+3 . Natural parameter $\eta$ and inputs $x$ are linearly related
 $$
 \eta = \theta^T x
 $$
 
-Many different/common types of distributions can be modelled as GLMs. 
+Many different/common types of distributions can be modelled as GLMs, and GLMs possess desirable properties such as ease of learning.
 
-### Canonical Response Function
-
-Distribution's mean as function of the natural paramter
+**Canonical Response Function** : Distribution's mean as function of the natural parameter
 $$
 g(\eta) = \mathbb{E}[T(y); \eta]
 $$
-### Canonical Link Function
-
-Inverse of the response function
+**Canonical Link Function** : Inverse of the response function
 $$
 g^{-1}
 $$
 
 ### Ordinary Least Squares
 
-- Target variable $y$ is continuous
-- Model $y\ |\ x$ as Gaussian $\mathcal{N}(\mu, \sigma^2)$
+Ordinary least squares can be derived as a GLM with the following properties:
 
-From assumption 2 (Predict $\mathbb{E}[T(y)]$ given $x$)
+- Target variable $y$ is **Continuous**
+- $y$ given $x$ is modelled as **Gaussian** $\mathcal{N}(\mu, \sigma^2)$
+
+Formulate the hypothesis function from assumption 2
+(Predict $\mathbb{E}[T(y)]$ given $x$)
 $$
 h_\theta(x) = \mathbb{E}[ y\ |\ x;\theta]
 $$
-Because it is a Gaussian
+Because it is Gaussian
 $$
 h_\theta(x) = \mu
 $$
 From the formulation of the Gaussian as an exponential family distribution, $\mu = \eta$
 $$
-h_\theta(x) = \eta
+\begin{aligned}
+h_\theta(x) &= \mu \cr
+&= \eta
+\end{aligned}
 $$
-Finally from assumption 3 
+Finally from assumption 3 ($\eta = \theta^T x$)
 $$
-h_\theta(x) = \theta^T x
+\begin{aligned}
+h_\theta(x) &= \eta \cr
+&= \theta^T x
+\end{aligned}
 $$
+
+The **canonical response function** of the Gaussian distribution is the identity function.
+
 
 
 ### Logistic Regression
+
+Logistic regression can also be formulated as a GLM.
 
 - $y \in \{0, 1 \}$
 
 - Choose Bernoulli family to model $y\ |\ x$
 
+The hypothesis function is 
 $$
 \begin{aligned}
 h_\theta(x) &= \mathbb{E}[y\ |\ x;\theta] \cr
-&= \phi \cr
-&= 1/(1 + e^{-\eta}) \cr
-&= 1/1(1+e^{-\theta^Tx})
+&= \phi \vphantom{\frac{1}{1}} \cr
+&= \frac{1}{(1 + e^{-\eta})} \cr
+&= \frac{1}{(1+e^{-\theta^Tx})}
 \end{aligned}
 $$
+
+The **canonical response function** of the Bernoulli distribution is the logistic function.
 
 
 
@@ -170,10 +191,12 @@ T(k) &= \{ 0, 0, 0, \dots, 0 \}
 $$
 Define an **indicator function**:
 $$
-\begin{aligned}
-	&1 &&\text{if True} \cr
-    &0 &&\text{otherwise}
-\end{aligned}
+\left\\{
+    \begin{aligned}
+        &1 &&\text{if True} \cr
+        &0 &&\text{otherwise}
+    \end{aligned}
+\right.
 $$
 
 $$
@@ -182,7 +205,10 @@ $$
 
 Which gives
 $$
-\mathbb{E} [ (T(y))\_i ] = P(y=i) = \phi_i
+\begin{aligned}
+\mathbb{E} [ (T(y))\_i ] &= P(y=i) \cr
+&= \quad \phi_i
+\end{aligned}
 $$
 Therefore the probability
 $$
@@ -202,22 +228,23 @@ $$
 \end{aligned}
 $$
 
+Fits the exponential family form
 $$
 p(y;\theta) = 
-\underbrace{1}\_b
+\underbrace{1 \vphantom{\frac{1}{1}} }\_b
 \exp {\LARGE(}
 \underbrace{
 (T(y))\_i \log(\frac{\phi_1}{\phi_k}) + \dots +
 (T(y))\_{k-1} \log(\frac{\phi_{k-1}}{\phi_k})
-}\_\eta + \underbrace{\log(\phi_k)}_a
+}\_\eta + \underbrace{ \log(\phi_k) \vphantom{\frac{1}{1}}  }_a
 {\LARGE)}
 $$
 
-Which fits the exponential family form
+With: 
 
-**Link Function** : $\eta_i = \log \frac{\phi_i}{\phi_k}$
+- **Link Function** : $\eta_i = \log \frac{\phi_i}{\phi_k}$
 
-**Response Function** : $\phi_i = \frac{e^{n_i}}{\sum_{j=1}^{k} e^{n_j}}$
+- **Response Function** : $\phi_i = \frac{e^{n_i}}{\sum_{j=1}^{k} e^{n_j}}$
 
 This mapping from $\eta \rightarrow \phi$ is also called the **softmax** function
 
@@ -225,5 +252,5 @@ This mapping from $\eta \rightarrow \phi$ is also called the **softmax** functio
 
 **Softmax regression** is a generalisation of logistic regression
 
-It ouputs estimated probabilities for every value of $i = 1, \dots, k$
+It outputs estimated probabilities for every value of $i = 1, \dots, k$
 
