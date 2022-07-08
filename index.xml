@@ -98,10 +98,8 @@ LMS with Features Modify gradient descent for ordinary least squares problem $$ 
       <pubDate>Thu, 07 Apr 2022 22:00:00 +0800</pubDate>
       
       <guid>https://andrelimzs.github.io/posts/machine-learning/generative-learning/</guid>
-      <description>Generative Learning Different approach to learning
-Try to model $p(x|y)$ and $p(y)$ instead of learning $p(y|x)$ directly
-$p(x|y)$ : Distribution of the target&amp;rsquo;s features $p(y)$ : Class priors Use Bayes rule to calculate posterior distribution $p(y|x)$ $$ p(y|x) = \frac{p(x|y) p(y)}{p(x)} $$ Can be simplified when using for prediction because denominator doesn&amp;rsquo;t matter $$ \arg \max_y P(y|x) = \arg \max_y p(x|y) p(y) $$
-Multivariate Normal Distribution In $d$-dimensions Parameterised by:</description>
+      <description>Generative Learning Generative learning is a different approach to learning as opposed to discriminative learning. It tries to model $p(x|y)$ and $p(y)$ instead of learning $p(y|x)$ directly.
+$p(x|y)$ : Distribution of the target&amp;rsquo;s features $p(y)$ : Class priors It uses Bayes rule to calculate posterior distribution $p(y|x)$ $$ p(y|x) = \frac{p(x|y) p(y)}{p(x)} $$ And can be simplified when using for prediction because the denominator is constant and doesn&amp;rsquo;t matter $$ \arg \max_y P(y|x) = \arg \max_y p(x|y) p(y) $$</description>
     </item>
     
     <item>
