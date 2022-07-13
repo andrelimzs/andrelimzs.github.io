@@ -89,7 +89,7 @@ Otherwise the functional margin can be made arbitrarily large by scaling $w$ and
       <description>Kernel Methods Kernel methods are an efficient way to perform nonlinear regression or classification, by calculating the dot product instead of the entire feature map.
 Feature Maps A feature map $\phi$ is a function that maps input attributes to some new (nonlinear) feature variables.
 LMS with Features First lets define:
-Input : $x \in \mathbb R ^ d$ Features : $\phi(x) \in \mathbb R^{p}$ Weights : $\theta \in \mathbb R^d$ Modify gradient descent for ordinary le2ast squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \underbrace{\phi(x^{(i)})} )\ \underbrace{\phi(x^{(i)}})} $$ Which will have SGD update rule $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
+Input : $x \in \mathbb R ^ d$ Features : $\phi(x) \in \mathbb R^{p}$ Weights : $\theta \in \mathbb R^d$ Modify gradient descent for ordinary least squares problem $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T x^{(i)})\ x^{(i)}} $$ With a feature map $\phi : \mathbb R^d \rightarrow \mathbb R^p$ that maps $x$ to $\phi(x)$ $$ \theta := \theta + \alpha \sum_{i=1}^{n}{(y^{(i)} - \theta^T \underbrace{\phi(x^{(i)})} )\ \underbrace{\phi(x^{(i)}})} $$ Which will have SGD update rule $$ \theta := \theta + \alpha (y^{(i)} - \theta^T \phi(x^{(i)}))\ \phi(x^{(i)}) $$</description>
     </item>
     
     <item>
