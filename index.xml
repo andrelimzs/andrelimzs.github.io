@@ -73,11 +73,10 @@ Cost/Loss Function Define least-squares cost for one sample $$ J^{(i)}(\theta) =
       <pubDate>Sat, 09 Apr 2022 22:00:00 +0800</pubDate>
       
       <guid>https://andrelimzs.github.io/posts/machine-learning/support-vector-machines/</guid>
-      <description>Support Vector Machines For the linear classifier $$ h_{w,b}(x) = g(w^T x + b) $$ with $y \in {-1, 1}$
+      <description>Support Vector Machines The support vector machine (SVM) is a supervised learning method that finds the optimal margin for either regression or classification.
+For the linear classifier $$ h_{w,b}(x) = g(w^T x + b) $$ with $y \in {-1, 1}$
 Margins Margins represent the idea of how confident and correct a prediction is.
-Functional Margin, $\hat \gamma$ The functional margin is defined as $$ \hat{\gamma}^{(i)} = y^{(i)} (w^T x^{(i)} + b) $$
-And it requires some sort of normalization condition.
-Otherwise the functional margin can be made arbitrarily large by scaling $w$ and $b$ without changing the decision boundary.</description>
+Geometric Margin, $\gamma$ The geometric margin is the Euclidean distance from a sample to the decision boundary, defined as</description>
     </item>
     
     <item>
