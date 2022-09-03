@@ -9,17 +9,35 @@ url: posts/machine-learning/support-vector-machines
 
 # Support Vector Machines
 
+The support vector machine (SVM) is a supervised learning method that finds the *optimal margin* for either regression or classification.
+
 For the linear classifier 
 $$
 h_{w,b}(x) = g(w^T x + b)
 $$
 with $y \in \{-1, 1\}$
 
-## Margins
+# Margins
 
 Margins represent the idea of how **confident** and **correct** a prediction is.
 
-### Functional Margin, $\hat \gamma$
+## Geometric Margin, $\gamma$
+
+The geometric margin is the Euclidean distance from a sample to the decision boundary, defined as
+
+$$
+\gamma^{(i)} = y^{(i)}
+\left(
+\left( \frac{w}{||w||} \right)^T x^{(i)} +
+\frac{b}{||w||}
+\right)
+$$
+
+The geometric margin is invariant to scaling of the parameters $w$ and $b$.
+
+When $||w|| = 1$, the geometric margin equals the functional margin.
+
+## Functional Margin, $\hat \gamma$
 
 The functional margin is defined as
 $$
@@ -27,31 +45,15 @@ $$
 (w^T x^{(i)} + b)
 $$
 
-And it requires some sort of normalization condition.
-
-Otherwise the functional margin can be made arbitrarily large by scaling $w$ and $b$ without changing the decision boundary.
-
-### Geometric Margin, $\gamma$
-
-The geometric margin is the Euclidean distance from a sample to the decision boundary, defined as
-
-$$
-\gamma = \frac{\hat{\gamma}}{||w||}
-$$
-
 Or
 $$
-\gamma^{(i)} = \frac{1}{||w||} y^{(i)}
-\left(
-\left( w \right)^T x^{(i)} + b
-\right)
+\hat{\gamma} = ||w|| \gamma
 $$
+The functional margin can be made arbitrarily large by scaling $w$ and $b$ without changing the decision boundary.
 
-The geometric margin is invariant to scaling of the parameters $w$ and $b$.
 
-When $||w|| = 1$, the functional margin equals the geometric margin.
 
-### On a Training Set
+## Training Set Margin
 
 Given a training set $S = \{ x^{(i)}, y^{(i)}; i=1,\dots,n \}$ the margins are defined as the smallest of the individual training examples
 $$
@@ -60,9 +62,9 @@ $$
 \gamma = \min_{i=1,\dots,n} \gamma^{(i)}
 $$
 
-## Optimal Margin Classifier
 
-A natural desire would be to maximize the geometric margin.
+
+# Optimal Margin Classifier
 
 Assume that the training set is linearly separable (can be separated with a hyperplane),  the problem can be formulated as:
 $$
@@ -73,9 +75,8 @@ i = 1, \dots, n \cr
 &&&&& ||w|| = 1
 \end{aligned}
 $$
-However $||w||=1$ is a difficult (non-convex) constraint, and cannot be easily solved.
+However $||w||=1$ is a non-convex constraint, and cannot be easily solved. The problem can be transformed using $\gamma = \frac{\hat{\gamma}}{||w||}$
 
-Using $\gamma = \frac{\hat{\gamma}}{||w||}$, transform the problem into
 $$
 \begin{aligned}
 &&\max_{\gamma,w,b} &&&
@@ -107,7 +108,7 @@ Which is a **quadratic programming** (QP) problem.
 
 
 
-## Lagrange Duality
+# Lagrange Duality
 
 Useful in solving constrained optimization problems
 
@@ -133,7 +134,7 @@ $$
 \frac{\partial \mathcal L}{\partial \beta_i}=0
 $$
 
-### Constrained Optimization
+## Constrained Optimization
 
 The method can be generalized to include inequality constraints. 
 
@@ -213,7 +214,7 @@ and this can be used to solve the primal problem
 
 
 
-## Optimal Margin Classifiers
+# Optimal Margin Classifiers Dual Form
 
 For the (primal) optimization problem
 $$
