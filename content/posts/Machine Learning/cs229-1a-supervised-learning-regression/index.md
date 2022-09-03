@@ -9,9 +9,11 @@ url: posts/machine-learning/supervised-learning-regression
 
 # Supervised Learning
 
-> Supervised learning is the task of learning a map from input to output
-
-It learns from *labeled* training data
+Supervised learning is the task of learning a function mapping from input to output
+$$
+y = f(x)
+$$
+The relationship can be linear/nonlinear or convex/nonconvex. The approach learns from labeled data.
 
 ## Terminology
 
@@ -28,50 +30,43 @@ It learns from *labeled* training data
 
 
 
-# (Linear) Regression
+# Linear Regression
 
 First decide the hypothesis function
 
-Where the convention is to let $x_0 = 1$
+A common convention is to let $x_0 = 1$
 $$
-h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2
+\begin{aligned}
+h(x) &= \sum_{i=0}^d \theta_i x_i \cr
+&= \theta^T x
+\end{aligned}
 $$
 
-$$
-h(x) = \sum_{i=0}^d \theta_i x_i = \theta^T x
-$$
+**Objective** : Learn the parameters $\theta$ to best predict $y$
 
-## Objective
-
-Learn the parameters $\theta$ to best predict $y$
-
-
-
-### Cost Function
-
-Define
+**Cost Function** : Defined as
 $$
 J(\theta) = \frac{1}{2} \sum_{i=1}^{n} ( h_\theta (x^{(i)} - y^{(i)}))^2
 $$
-This is the *least-squares cost function* that gives **ordinary least squares** regression
+This is the *least-squares cost function* that results in **ordinary least squares** regression
 
 
 
-## LMS Algorithm
+# Least Mean Squares (LMS) Algorithm
 
 Least mean squares, or Widrow-Hoff learning rule
 
 1. Start with an initial guess
 2. Repeatedly perturb $\theta$ 
-3. Hope we converge
+3. Hope it converges
 
-### Gradient Descent
+## Gradient Descent
 
 $$
 \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta)
 $$
 
-- **Learning Rate** : $\alpha$ 
+**Learning Rate** : $\alpha$ 
 
 **Single training example case $(x,y)$**
 
@@ -84,7 +79,7 @@ $$
 \propto (y - h_\theta(x))
 $$
 
-### Batch Gradient Descent
+## Batch Gradient Descent
 
 Group updates into vector $x$
 $$
@@ -95,7 +90,7 @@ $$
 $$
 Which is equivalent to gradient descent on the original cost function $J$
 
-### Stochastic Gradient Descent
+## Stochastic Gradient Descent
 
 $$
 \theta := \theta + \alpha
@@ -106,7 +101,7 @@ $$
 
 And repeatedly run through the training set
 
-### Batch vs SGD
+## Batch vs SGD
 
 | Batch               | SGD                     |
 | ------------------- | ----------------------- |
@@ -117,17 +112,19 @@ In most cases being close to the minimum is good enough, and therefore people ch
 
 
 
-## The Normal Equations
+# The Normal Equations
 
 Minimise explicitly by taking the derivatives w.r.t $J$ and setting to zero
 
-### Matrix Derivatives
+**Matrix Derivatives** : For function $f : \mathbb{R}^{n \times d} \rightarrow \mathbb{R}$
 
-For function $f : \mathbb{R}^{n \times d} \rightarrow \mathbb{R}$
+The Jacobian is
+$$
+\nabla_A f(A)
+$$
+ 
 
-$\nabla_A f(A)$ is the Jacobian
-
-### Least-Squares
+## Least-Squares
 
 Set $\nabla_\theta J(\theta) = 0$
 
@@ -172,7 +169,7 @@ $$
 y^{(i)} | x^{(i)}; \theta \sim \mathcal{N}(\theta^T x ^{(i)}, \sigma^2)
 $$
 
-### Likelihood Function
+## Likelihood Function
 
 Given $X$ and $\theta$, what is the distribution of $y^{(i)}$s?
 $$
@@ -207,7 +204,7 @@ $$
 
 
 
-## Locally Weighted Linear Regression (LWR)
+# Locally Weighted Linear Regression (LWR)
 
 Assuming sufficient training data, makes choice of features less important
 
@@ -230,107 +227,3 @@ This is an example of a **non-parametric Algorithm**
 
 - Requires data even after fitting
 - Non-parametric means hypothesis $h$ grows linearly with size of training set
-
-
-
-# Classification
-
-Similar to regression, except $y$ only takes on a small number of discrete values
-
-## Logistic Regression
-
-Start by ignoring the fact that $y$ is discrete
-
-Use linear regression with modified hypothesis function
-$$
-h_\theta(x) = g(\theta^Tx)
-= \frac{1}{1 + e^{-\theta^Tx}}
-$$
-where $g(z) = \frac{1}{1 + e^{-z}}$ is the **logistic**/**sigmoid** function
-
-$g(z)$ tends to $0$ or $1$ as $z \rightarrow -\infty$ or $z \rightarrow \infty$
-
-**Other Functions**
-
-Other functions can be used
-
-But sigmoid has a useful function that the derivative:
-$$
-g' = g(1 - g)
-$$
-
-## Probabilistic Interpretation
-
-Assume
-$$
-\begin{aligned}
-P(y=1 | x; \theta) &= h_\theta(x) \cr
-P(y=0 | x; \theta) &= 1 - h_\theta(x)
-\end{aligned}
-$$
-or equivalently
-$$
-P(y | x; \theta) = [h_\theta(x)]^y [1-h_\theta(x)]^{1-y}
-$$
-For $n$ independent training examples the likelihood function is
-$$
-\begin{aligned}
-L(\theta) &= p(y | X;\theta) \cr
-&= \prod_{i=1}^{n} p(y^{(i)} | x^{(i)}; \theta) \cr
-&= \prod_{i=1}^{n}
-	\left( h_\theta(x^{(i)}) \right)^{y^{(i)}}
-	\left(1 - h_\theta(x^{(i)}) \right)^{1-y^{(i)}}
-\end{aligned}
-$$
-Which can also be transformed into log likelihood
-$$
-l(\theta) = \sum_{i=1}^{n} y^{(i)}
-\log h(x^{(i)}) + (1 - y^{(i)}) \log(1 - h(x^{(i)}))
-$$
-And maximise using **gradient ascent**
-
-### Gradient Ascent rule
-
-The updates are
-$$
-\frac{\partial}{\partial \theta_j} l(\theta) =
-(y - h_\theta(x)) x_j
-$$
-
-$$
-\theta_j := \theta_j + \alpha
-\left( y^{(i)} - h_\theta(x^{(i)})
-\right)\ x_j^{(i)}
-$$
-
-# Newton's Method
-
-An alternative method to gradient descent is newton's method
-
-To **Maximise**
-$$
-\theta := \theta - \frac{l'(\theta)}{l''(\theta)}
-$$
-
-## Vector-Valued Generalisation
-
-Newton-Raphson method
-$$
-\theta = \theta - H^{-1} \nabla_\theta l(\theta)
-$$
-Where $H \in \mathbb{R}^{(d+1) \times (d+1)}$ is the **Hessian**
-$$
-H_{ij} = \frac{\partial^2 l(\theta)}{\partial \theta_i \ \partial \theta_j}
-$$
-
-## Comparison with Gradient Descent
-
-**Advantages**
-
-- Faster convergence
-- Requires significantly fewer iterations
-
-**Disadvantages**
-
-- Each iteration can be more expensive
-  Requires inverting the Hessian
