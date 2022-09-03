@@ -65,8 +65,8 @@ The expected sum of discounted rewards upon starting in $s$ and taking actions a
 $$
 V^\pi(s) = \mathbb{E}
 \left[
-R(s_0) + \gamma R(s_1) + \gamma^2 R(s_2)
-+ \dots | s_0 = s,\pi
+    R(s_0) + \gamma R(s_1) + \gamma^2 R(s_2) +
+    \dots | s_0 = s,\pi
 \right]
 $$
 
@@ -92,26 +92,31 @@ Can be used to efficiently solve for the value function $V^\pi$
 ### Optimal Value Function
 
 Best possible expected sum of discounted rewards which can be attained using any policy
+
 $$
 V^*(s) = \max_\pi V^\pi (s)
 $$
+
 Which has it's own version of the **Bellman Equation**
+
 $$
-V^*(s) = R(s) + \max_{a\in A} \gamma \sum_{s'\in S} P_{sa} (s') V^*(s')
+V^{\ast}(s) = R(s) + \max_{a\in A} \gamma
+\sum_{s'\in S}{P_{sa} (s') V^{\ast}(s')}
 $$
+
 The second term is a $\max$ over all possible actions because that is the optimal reward.
 
 ### Optimal Policy
 
 $$
-\pi^*(s) = \arg \max_{a\in A} \sum_{s'\in S} P_{sa}(s') V^*(s')
+\pi^{\ast}(s) = \arg \max_{a\in A} \sum_{s'\in S} P_{sa}(s') V^*(s')
 $$
 
 Which gives the action that attains the $\max$ in the optimal value function
 
 For every state $s$ and policy $\pi$
 $$
-V^*(s) = V^{\pi*}(s) \geq V^\pi(s)
+V^\ast(s) = V^{\pi*}(s) \geq V^\pi(s)
 $$
 Which says that
 
@@ -164,9 +169,9 @@ Both algorithms will cause $V$ to converge to $V^*$
 
 - Repeatedly computes value function for the current policy
 - Update policy using current value function
-  - This is the policy that is **greedy w.r.t. $V$**
+  - This is the policy that is **greedy w.r.t. $\bold V$**
 - The value function can be updated using Bellman equations
-- After a finite number of iterations, $V$ will converge to $V^*$ and $\pi$ to $\pi^*$
+- After a finite number of iterations, $V$ will converge to $V^\ast$ and $\pi$ to $\pi^\ast$
 
 ### Value vs Policy Iteration
 
@@ -187,8 +192,8 @@ Both algorithms will cause $V$ to converge to $V^*$
 Given enough trials, can derive **maximum likelihood estimates** for the state transition probabilities
 $$
 P_{sa}(s') =
-\frac{\# \text{ times } a \text{ led to } s' }
-{\# \text{ times we took } a}
+\frac{num. \text{ times } a \text{ led to } s' }
+{num. \text{ times we took } a}
 $$
 In the case of $\frac{0}{0}$, can set $P$ to $\frac{1}{|S|}$ (estimate as uniform)
 
@@ -253,7 +258,7 @@ Keep count of numerator & denominator
 - Can be done with:
   - Random actions
   - Executing some policy
-  - Other way of choosing actions
+  - Other way of choosing actions \
     [?] Control law?
 - Apply learning algorithm to predict $s_{t+1}$ as function of $s_t$
 
@@ -294,7 +299,7 @@ Perform value iteration update
 $$
 \begin{aligned}
 	V(s) :&= R(s) + \gamma \max_a
-	\int_{s'} P_{sa}(s') V(s') ds' \\
+	\int_{s'} P_{sa}(s') V(s') ds' \cr
 	&= R(s) + \gamma \max_a E_{s' \sim P_{sa}} [V(s')]
 \end{aligned}
 $$
