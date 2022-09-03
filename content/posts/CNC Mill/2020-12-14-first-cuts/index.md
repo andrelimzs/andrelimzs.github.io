@@ -2,9 +2,6 @@
 title: First Cuts
 author: andrelimzs
 date: 2020-12-14T08:46:50+00:00
-url: /first-cuts/
-categories:
-  - CNC Machine
 showToc: false
 draft: false
 ---

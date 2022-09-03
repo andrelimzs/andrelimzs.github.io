@@ -2,11 +2,6 @@
 title: Parallel Manipulators
 author: andrelimzs
 date: 2020-05-23T20:01:30+00:00
-url: /parallel-manipulators/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false
@@ -58,9 +53,9 @@ I started by writing a quick kinematic simulation in MATLAB. The base are denote
 In subsequent posts I will explore
 
 1. The _workspace_ \
-  Which are the locations that can be reached
+    Which are the locations that can be reached
 2. _Singularities_ \
-  Which are poses where the mechanism loses controllability and/or rigidity
+    Which are poses where the mechanism loses controllability and/or rigidity
 3. _Velocity_, _acceleration_ and _static_ analysis \
-  Used to determine the relation between joint velocities/force and end-effector velocity/force
+    Used to determine the relation between joint velocities/force and end-effector velocity/force
 

@@ -2,11 +2,6 @@
 title: G2Core Motion Controller
 author: andrelimzs
 date: 2020-06-19T16:21:33+00:00
-url: /g2core-motion-controller/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false

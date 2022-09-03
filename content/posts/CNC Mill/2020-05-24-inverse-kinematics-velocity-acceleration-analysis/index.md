@@ -2,11 +2,6 @@
 title: 'Inverse Kinematics, Velocity & Acceleration Analysis'
 author: andrelimzs
 date: 2020-05-24T16:27:03+00:00
-url: /inverse-kinematics-velocity-acceleration-analysis/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false
@@ -134,5 +129,5 @@ $$
 Acceleration
 
 $$
-  \ddot \Theta = J_k^{-1} \dot \bold W + \dot J_K^{-1} \bold W
+\ddot \Theta = J_k^{-1} \dot \bold W + \dot J_K^{-1} \bold W
 $$

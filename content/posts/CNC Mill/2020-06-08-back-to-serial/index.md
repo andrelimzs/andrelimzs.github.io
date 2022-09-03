@@ -2,11 +2,6 @@
 title: Back to Serial
 author: andrelimzs
 date: 2020-06-08T17:24:57+00:00
-url: /back-to-serial/
-neve_meta_enable_content_width:
-  - off
-categories:
-  - CNC Machine
 showToc: true
 math: true
 draft: false
