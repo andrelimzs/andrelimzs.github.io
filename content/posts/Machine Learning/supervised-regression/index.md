@@ -267,3 +267,137 @@ or equivalently
 $$
 P(y | x; \theta) = [h_\theta(x)]^y [1-h_\theta(x)]^{1-y}
 $$
+For $n$ independent training examples the likelihood function is
+$$
+\begin{aligned}
+L(\theta) &= p(y | X;\theta) \cr
+&= \prod_{i=1}^{n} p(y^{(i)} | x^{(i)}; \theta) \cr
+&= \prod_{i=1}^{n}
+	\left( h_\theta(x^{(i)}) \right)^{y^{(i)}}
+	\left(1 - h_\theta(x^{(i)}) \right)^{1-y^{(i)}}
+\end{aligned}
+$$
+Which can also be transformed into log likelihood
+$$
+l(\theta) = \sum_{i=1}^{n} y^{(i)}
+\log h(x^{(i)}) + (1 - y^{(i)}) \log(1 - h(x^{(i)}))
+$$
+And maximise using **gradient ascent**
+
+### Gradient Ascent rule
+
+The updates are
+$$
+\frac{\partial}{\partial \theta_j} l(\theta) =
+(y - h_\theta(x)) x_j
+$$
+
+$$
+\theta_j := \theta_j + \alpha
+\left( y^{(i)} - h_\theta(x^{(i)})
+\right)\ x_j^{(i)}
+$$
+
+# Newton's Method
+
+An alternative method to gradient descent is newton's method
+
+To **Maximise**
+$$
+\theta := \theta - \frac{l'(\theta)}{l''(\theta)}
+$$
+
+## Vector-Valued Generalisation
+
+Newton-Raphson method
+$$
+\theta = \theta - H^{-1} \nabla_\theta l(\theta)
+$$
+Where $H \in \mathbb{R}^{(d+1) \times (d+1)}$ is the **Hessian**
+$$
+H_{ij} = \frac{\partial^2 l(\theta)}{\partial \theta_i \ \partial \theta_j}
+$$
+
+## Comparison with Gradient Descent
+
+**Advantages**
+
+- Faster convergence
+- Requires significantly fewer iterations
+
+**Disadvantages**
+
+- Each iteration can be more expensive
+  Requires inverting the Hessian
+
+
+
+# Generalised Linear Models (GLM)
+
+Show that both linear regression and classification are special cases of **Generalised Linear Models**
+
+## Exponential Family
+
+The class of distributions in the exponential family is
+$$
+p(y; \eta) = b(y)\ e^{\eta^T\ T(y)}\ e^{-a(\eta))}
+$$
+
+- $\eta$ : **natural (canonical) parameter**
+- $T(y)$ : **sufficient statistic** \
+  Often let $T(y) = y$
+- $a(\eta)$ : **log partition function**
+
+$e^{-a(\eta)}$ normalises the distribution and ensures it sums to $1$
+
+### Family/Set
+
+Defined by a (fixed) choice of $(T, a, b)$
+
+And parameterized by $\eta$
+
+### Bernoulli
+
+With mean $\phi$ defines a distribution over $y \in \{0,1\}$
+
+Varying $\phi$ gives different Bernoulli distributions
+
+$$
+\begin{aligned}
+p(y; \phi) &= \phi^y (1 - \phi)^{1-y} \cr
+&= \exp \left( y\log\phi + (1-y) \log(1-\phi) \right) \cr
+&= \underbrace{1}_y \exp (
+    \underbrace{\left(\log \phi/(1-\phi) \right)}_n
+    \ \underbrace{y}_T +
+    \underbrace{\log(1-\phi)}_a
+    )
+\end{aligned}
+$$
+
+Which shows that is is part of the exponential family
+
+### Gaussian
+
+$$
+\begin{aligned}
+p(y; \mu) &= \frac{1}{\sqrt{2\pi}} \left(-\frac{1}{2} 
+(y-\mu)^2 \right) \cr
+&= \underbrace{\frac{1}{\sqrt{2\pi}}
+\exp (-\frac{1}{2} y^2)}_b \cdot
+\exp (\underbrace{\mu}_n
+	\underbrace{y}_T
+	- \underbrace{\frac{1}{2} \mu^2}_a )
+\end{aligned}
+$$
+
+### Other Distributions
+
+- Multinomial
+- Poisson
+- Gamma
+- Exponential
+- Beta
+- Dirichlet
+
+
+
