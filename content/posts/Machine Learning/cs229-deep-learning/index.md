@@ -1,6 +1,6 @@
 ---
-title: "CS229 Deep Learning"
-date: 2022-04-08T22:00:00+08:00
+title: "Deep Learning"
+date: 2022-04-10T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true

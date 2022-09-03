@@ -1,5 +1,5 @@
 ---
-title: "CS229 Support Vector Machine"
+title: "Support Vector Machine"
 date: 2022-04-08T22:00:00+08:00
 draft: false
 ShowToc: true
