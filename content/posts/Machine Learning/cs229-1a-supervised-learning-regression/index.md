@@ -152,7 +152,7 @@ $$
 
 ## Probabilistic Interpretation
 
-Linear regression with least-squares cost can be derived from statistical methods to give a probability interpretation.  
+Linear regression with least-squares cost can be derived from statistical methods to give a probabilistic interpretation.  
 
 Assume target and inputs are related via
 $$
@@ -229,7 +229,7 @@ $$
 
 The choice of features is important because it can result in overfitting or underfitting.
 
-{{< figure src="feature-choice.jpg" width=800 align="center" >}}
+{{< figure src="feature-choice.jpg" width=800 align="center" caption="CS229 https://cs229.stanford.edu/" >}}
 
 But one method to make the choice of features less critical is **locally weighted linear regression** (LWR), assuming there is sufficient training data.
 
