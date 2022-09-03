@@ -97,7 +97,7 @@ p(x|y=1) &\sim
 \right) \cr
 \end{aligned}
 $$
-This model usual combines $\Sigma_0$/$\Sigma_1$ into $\Sigma$
+This model usually combines $\Sigma_0$/$\Sigma_1$ into $\Sigma$
 
 The log-likelihood is
 $$
@@ -222,3 +222,22 @@ $$
 \mathcal{L}(\phi_y, \phi_{j|y=0}, \phi_{j|y=1}) =
 \prod_{i=1}^{n} p(x^{(i)}, y^{(i)})
 $$
+Maximise w.r.t $\phi_y$, $\phi_{j|y=0}$ and $\phi_{j|y=1}$
+$$
+\begin{aligned}
+	\phi_{j|y=1} &=
+	\frac{\sum_{i=1}^n  1\{ x_k^{(i)}=1 \wedge y^{(i)}=1 \}}
+		{\sum_{i=1}^n  1\{ y^{(i)}=1 \}} \cr
+	\phi_{j|y=0} &=
+	\frac{\sum_{i=1}^n  1\{ x_k^{(i)}=1 \wedge y^{(i)}=0 \}}
+		{\sum_{i=1}^n  1\{ y^{(i)}=0 \}} \cr
+	\phi_{y} &=
+	\frac{\sum_{i=1}^n  1\{ y^{(i)}=1 \}}{n}
+\end{aligned}
+$$
+To make a prediction, find the highest possiblity from
+$$
+p(y=1|x) = \frac{p(x|y=1) p(y=1)}{p(x)}
+$$
+
+
