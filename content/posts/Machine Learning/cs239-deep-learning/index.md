@@ -148,5 +148,29 @@ $$
 $$
 Or equivalently
 $$
-z = W^{[1]}x + b^{[1]}
+\begin{aligned}
+&z = W^{[1]}x + b^{[1]} \cr
+&a = ReLU(W^{[1]} + b^{[1]}) \cr
+&h\_\theta(x) = W^{[2]} a + b^{[2]}
+\end{aligned}
 $$
+
+- $\theta$ consists of weights $W^{[i]}$ and biases $b^{[i]}$
+
+- Each layer consists of the pair $(W^{[i]}, b^{[i]})$
+
+
+
+### Multi-Layer Network
+
+- Can stack more layers to get a deeper fully-connected neural network
+- If you let $a^{[0]} = x$ and $a^{[r]} = h_\theta(x)$
+
+$$
+a^{[k]} = \text{ReLU}\left(
+	W^{[k]} a^{[k-1]} + b^{[k]}
+\right), \quad \forall k=1,\dots,r-1
+$$
+
+### Connection to Kernel Method
+
