@@ -1,9 +1,10 @@
 ---
-title: "Support Vector Machine"
-date: 2022-04-08T22:00:00+08:00
+title: "Support Vector Machine (SVM)"
+date: 2022-04-09T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true
+url: posts/machine-learning/support-vector-machines
 ---
 
 # Support Vector Machines

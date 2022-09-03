@@ -4,6 +4,7 @@ date: 2022-06-25T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true
+url: posts/machine-learning/unsupervised-learning
 ---
 
 # Clustering & K-Means

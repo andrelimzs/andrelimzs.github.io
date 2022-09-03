@@ -4,6 +4,7 @@ date: 2022-04-11T23:59:00+08:00
 draft: false
 ShowToc: true
 math: true
+url: posts/machine-learning/reinforcement-learning
 ---
 
 ## Reinforcement Learning

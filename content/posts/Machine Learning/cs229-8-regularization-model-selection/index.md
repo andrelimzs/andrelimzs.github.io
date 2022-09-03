@@ -4,6 +4,7 @@ date: 2022-06-24T22:00:00+08:00
 draft: false
 ShowToc: true
 math: true
+url: posts/machine-learning/regularization
 ---
 
 # Regularization
