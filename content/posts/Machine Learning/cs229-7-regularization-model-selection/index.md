@@ -143,10 +143,10 @@ Is a more extreme variant where $k = m$, the number of training examples. At eve
 
 # Bayesian Regularization
 
-| Frequentist                                                  | Bayesian                                          |
-| ------------------------------------------------------------ | ------------------------------------------------- |
-| $\theta$ unknown constant-valued                             | $\theta$ is a random variable                     |
-| Maximum likelihood estimation (MLE)                          | Maximum a posterior (MAP)                         |
+| Frequentist                               | Bayesian                                              |
+| ----------------------------------------- | ----------------------------------------------------- |
+| $\theta$ unknown constant-valued          | $\theta$ is a random variable                         |
+| Maximum likelihood estimation (MLE)       | Maximum a posterior (MAP)                             |
 | $\arg \max_\theta \prod p(y \| x;\theta)$ | $\arg \max_\theta \prod p(y \| x;\theta) \ p(\theta)$ |
 
 Previous sections treated the parameter fitting as a **maximum likelihood estimation** (MLE) problem. The parameters $\theta$ are treated as an **unknown** **constant-value**.
