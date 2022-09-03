@@ -1,7 +1,7 @@
 ---
 title: "Growth of Functions"
 date: 2022-01-17T23:05:22+08:00
-draft: true
+draft: false
 ShowToc: true
 math: true
 ---
