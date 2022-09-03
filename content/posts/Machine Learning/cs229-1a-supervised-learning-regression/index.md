@@ -15,40 +15,57 @@ y = f(x)
 $$
 The relationship can be linear/nonlinear or convex/nonconvex. The approach learns from labeled data.
 
+
+
 ## Terminology
 
-- **Input (Features)** : $x^{(i)}$
-- **Output (Target)** : $y^{(i)}$
-- **Training example** : $(x^{(i)}, y^{(i)})$
-- **Training set** : Set of training examples
-- **Hypothesis** : $h(x)$
+**Input (Features)** : $x^{(i)}$
+
+**Output (Target)** : $y^{(i)}$
+
+**Training example** : $(x^{(i)}, y^{(i)})$
+
+**Hypothesis** : $h(x)$
+
+**Parameters / Weights** : $\theta$
 
 ## Types
 
-- **Regression** : Continuous values
-- **Classification** : Discrete values
+**Regression** : Continuous values
+
+**Classification** : Discrete values
 
 
 
 # Linear Regression
 
-First decide the hypothesis function
+**Objective**
 
-A common convention is to let $x_0 = 1$
-$$
-\begin{aligned}
-h(x) &= \sum_{i=0}^d \theta_i x_i \cr
-&= \theta^T x
-\end{aligned}
-$$
+Learn parameters $\theta$ for a given hypthesis function $h$ to best predict output $y$ from input $x$
 
-**Objective** : Learn the parameters $\theta$ to best predict $y$
+**Hypothesis Function**
 
-**Cost Function** : Defined as
-$$
-J(\theta) = \frac{1}{2} \sum_{i=1}^{n} ( h_\theta (x^{(i)} - y^{(i)}))^2
-$$
-This is the *least-squares cost function* that results in **ordinary least squares** regression
+Candidate model that we think will best fit the data
+
+>  [Example] A linear model can be represented as
+> $$
+> \begin{aligned}
+> h(x) &= \sum_{i=0}^d \theta_i x_i \cr
+> &= \theta^T x
+> \end{aligned}
+> $$
+
+
+
+**Cost / Loss Function**
+
+Measure of the accuracy or error of the model. The cost is driven to zero to fit the model to the data.
+
+>  [Example] A common cost function is least-squares
+> $$
+> J(\theta) = \frac{1}{2} \sum_{i=1}^{n} ( h_\theta (x^{(i)} - y^{(i)}))^2
+> $$
+>  which results in **ordinary least squares** regression
 
 
 
@@ -60,6 +77,8 @@ Least mean squares, or Widrow-Hoff learning rule
 2. Repeatedly perturb $\theta$ 
 3. Hope it converges
 
+
+
 ## Gradient Descent
 
 $$
@@ -68,16 +87,16 @@ $$
 
 **Learning Rate** : $\alpha$ 
 
-**Single training example case $(x,y)$**
-
-Reduces to
+The **single training example case $(x,y)$** reduces to
 $$
 \theta_j := \theta_j + \alpha (y^{(i)} - h_\theta (x^{(i)})) x_j^{(i)}
 $$
 The update is **proportional** to the **error**
 $$
-\propto (y - h_\theta(x))
+\text{update} \propto (y - h_\theta(x))
 $$
+
+
 
 ## Batch Gradient Descent
 
@@ -89,6 +108,8 @@ $$
 \right) x^{(i)}
 $$
 Which is equivalent to gradient descent on the original cost function $J$
+
+
 
 ## Stochastic Gradient Descent
 
@@ -122,7 +143,7 @@ The Jacobian is
 $$
 \nabla_A f(A)
 $$
- 
+
 
 ## Least-Squares
 
@@ -227,3 +248,4 @@ This is an example of a **non-parametric Algorithm**
 
 - Requires data even after fitting
 - Non-parametric means hypothesis $h$ grows linearly with size of training set
+
